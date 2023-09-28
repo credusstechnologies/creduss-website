@@ -1,0 +1,48 @@
+.hero {
+  min-height: 100vh;
+  margin-top: 5rem;
+  padding-top: 3rem;
+
+  @media screen and (max-width: 800px) {
+    background: url("../public/icons/hero-img.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+
+    padding-bottom: 5rem;
+  }
+
+  .hero-img-wrapper {
+    @media screen and (min-width: 800px) {
+      //   width: 50%;
+    }
+
+    .hero-img {
+      padding: 3rem inherit;
+      padding-bottom: 3rem;
+
+      @media screen and (min-width: 800px) {
+        display: block;
+        // width: 200%;
+        transform: scale(2);
+        position: relative;
+        left: -30%;
+
+        z-index: 0;
+      }
+    }
+  }
+}
+
+footer {
+  .our-processes {
+    img {
+      transform: scale(1.1);
+    }
+  }
+  .mob-footer-nav {
+    @media screen and (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
