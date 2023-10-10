@@ -2,13 +2,18 @@ import React, { useEffect } from "react";
 
 const useClickOutside = (ref, state, setState) => {
   useEffect(() => {
-    document.addEventListener("click", (e) => {
-      // if where is being clicked is not same as the ref, change the state to false
+    const handleClickOutside = (e) => {
       if (!ref.current?.contains(e.target)) {
         setState && setState(false);
       }
-    });
-  }, [state]);
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [state, ref, setState]);
 };
 
 export default useClickOutside;
