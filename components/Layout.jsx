@@ -4,6 +4,7 @@ import { Providers } from "@/redux/provider";
 import Nav, { SubNav } from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import { useState } from "react";
 
 const Layout = ({
   children,
@@ -14,6 +15,8 @@ const Layout = ({
     specifiedWord: "PACKAGE",
   },
 }) => {
+  const [showSubNav, setShowSubNav] = useState(false);
+
   return (
     <body>
       <header
@@ -21,8 +24,8 @@ const Layout = ({
           !showHero ? "h-auto" : "min-h-screen"
         } bg-secondary text-white`}>
         <div className="fixed w-full left-0 top-0 z-20">
-          <Nav />
-          <SubNav />
+          <Nav showSubNav={showSubNav} setShowSubNav={setShowSubNav} />
+          <SubNav showSubNav={showSubNav} setShowSubNav={setShowSubNav} />
         </div>
 
         {showHero && <Hero heroProps={heroProps} />}
