@@ -17,24 +17,19 @@ import {
   setShowSubNav,
 } from "@/redux/features/global/globalSlice";
 import GetAppBtn from "./GetAppBtn";
+import MobNav from "./nav/MobNav";
 
-const Nav = () => {
-  const { showSubNav } = useSelector((state) => state.global);
+const Nav = ({ showSubNav, setShowSubNav }) => {
   const dispatch = useDispatch();
-
-  const [showMobNav, setShowMobNav] = useState(false);
-  const mobNavRef = useRef();
-  // const deskNavRef = useRef();
+  // const { showSubNav } = useSelector((state) => state.global);
   const { activeSubNav } = useSelector((state) => state.global);
-
-  useClickOutside(mobNavRef, showMobNav, setShowMobNav);
-  // useClickOutside(deskNavRef, showMobNav, setShowMobNav);
-  console.log(showMobNav);
+  const [showMobNav, setShowMobNav] = useState(false);
 
   useEffect(() => {});
   return (
     <nav className="px-10 py-5 md:px-20 relative bg-navBg md:flex md:items-center md:justify-between">
       <div className="flex items-center justify-between">
+        {/* logo and mobNav hamburger */}
         <Link href={"/"}>
           <Image src={Logo} alt="logo" />
         </Link>
@@ -47,17 +42,17 @@ const Nav = () => {
       </div>
 
       <ul className="hidden md:flex md:gap-4 md:items-center md:justify-between">
-        {/*START active sub nav */}
+        {/* desktop only nav items */}
         <li
           className="cursor-pointer"
-          onClick={() => dispatch(setShowSubNav())}>
+          onClick={() => setShowSubNav(!showSubNav)}>
           <i
             className={`fa-solid fa-chevron-${
               showSubNav ? "up" : "down"
             }`}></i>{" "}
           {activeSubNav?.text}
         </li>
-        {/*END active sub nav */}
+
         {mainNavList.map((nav) => (
           <li key={nav.id}>
             <Link href={nav.path}>{nav.text}</Link>
@@ -68,79 +63,15 @@ const Nav = () => {
       <div className="md:block hidden">
         <GetAppBtn setShowMobNav={setShowMobNav} />
       </div>
-      {/* <SubNav /> */}
 
       {/* mobile nav specific */}
       {showMobNav && (
-        <div className=" flex md:hidden flex-col absolute top-0 right-0 bg-white text-black w-[80%] h-screen">
-          <button
-            onClick={() => setShowMobNav(false)}
-            className="bg-secondary text-white text-right p-4">
-            <div className="bg-gray-600 inline-block p-1 rounded-full w-[30px] h-[30px] text-center">
-              <i className="fa-solid fa-close"></i>
-            </div>
-          </button>
-
-          <div className="h-screen p-3 flex flex-col justify-between text-right">
-            <ul className="flex flex-col gap-[1.5rem]  ">
-              {/* active sub mob nav */}
-              <li
-                className="font-bold"
-                onClick={() => dispatch(setShowSubNav())}>
-                <Link href={activeSubNav?.path}>
-                  <i
-                    className={`fa-solid fa-chevron-${
-                      showSubNav ? "up" : "down"
-                    }`}></i>{" "}
-                  {activeSubNav?.text}
-                </Link>
-              </li>
-              {/* mobile specific */}
-              {showSubNav && (
-                <nav className="block md:hidden text-gray-600">
-                  <div className="-mt-8">
-                    {subNavList.resources.map((res) => (
-                      <li
-                        className={`mt-[1.5rem]`}
-                        key={res.id}
-                        onClick={() => {
-                          dispatch(setActiveSubNav(res));
-                          dispatch(setShowSubNav());
-                        }}>
-                        <Link href={res.path}>{res.text}</Link>
-                      </li>
-                    ))}
-                  </div>
-
-                  <div>
-                    {subNavList.company.map((com) => (
-                      <li
-                        className="mt-[1.5rem]"
-                        key={com.id}
-                        onClick={() => {
-                          dispatch(setActiveSubNav(com));
-                          dispatch(setShowSubNav());
-                        }}>
-                        <Link href={com.path}>{com.text}</Link>
-                      </li>
-                    ))}
-                  </div>
-                </nav>
-              )}
-              {mainNavList.map((nav) => (
-                <li key={nav.id} className=" font-bold">
-                  <Link onClick={() => setShowMobNav(false)} href={nav.path}>
-                    {nav.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex justify-end text-right">
-              <GetAppBtn setShowMobNav={setShowMobNav} />
-            </div>
-          </div>
-        </div>
+        <MobNav
+          showMobNav={showMobNav}
+          showSubNav={showSubNav}
+          activeSubNav={activeSubNav}
+          setShowMobNav={setShowMobNav}
+        />
       )}
     </nav>
   );
@@ -148,26 +79,24 @@ const Nav = () => {
 
 export default Nav;
 
-export const SubNav = () => {
+export const SubNav = ({ showSubNav, setShowSubNav }) => {
   const dispatch = useDispatch();
-  const { showSubNav } = useSelector((state) => state.global);
-  // console.log(showSubNav);
-  //   const [showNav, setShowNav] = useState(showSubNav);
-
-  //   const ref = useRef();
-  //   useClickOutside(ref, showSubNav, dispatch(setShowSubNav()));
+  const ref = useRef();
+  useClickOutside(ref, showSubNav, setShowSubNav);
 
   return (
-    <>
+    <div>
       {showSubNav && (
-        <nav className="absolute w-full left-0 hidden md:flex px-10 py-5 bg-white text-black  justify-between gap-5 z-20">
+        <nav
+          ref={ref}
+          className="absolute w-full left-0 hidden md:flex px-10 py-5 bg-white text-black  justify-between gap-5 z-20">
           <div>
             <h6 className="text-warning">Resources</h6>
             {subNavList.resources.map((res) => (
               <Link
                 onClick={() => {
                   dispatch(setActiveSubNav(res));
-                  dispatch(setShowSubNav());
+                  setShowSubNav(false);
                 }}
                 className="mt-[1.5rem] flex gap-3 items-center"
                 key={res.id}
@@ -187,7 +116,7 @@ export const SubNav = () => {
               <Link
                 onClick={() => {
                   dispatch(setActiveSubNav(com));
-                  dispatch(setShowSubNav());
+                  setShowSubNav(false);
                 }}
                 className="mt-[1.5rem] flex gap-3 items-center"
                 key={com.id}
@@ -215,7 +144,7 @@ export const SubNav = () => {
           </div>
         </nav>
       )}
-    </>
+    </div>
   );
 };
 
