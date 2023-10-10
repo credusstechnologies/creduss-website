@@ -1,0 +1,128 @@
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+const Accordion = () => {
+  // state holds the ID of active accordion item
+  const [activeItemId, setActiveItemId] = useState(null);
+
+  // fxn that checks if the ID of clicked accordion item has already been clicked and set as activeItemId
+  // fxn takes in the ID of clicked accordion item
+  const handleClickedItem = (itemId) => {
+    if (itemId === activeItemId) {
+      setActiveItemId(null);
+    } else {
+      setActiveItemId(itemId);
+    }
+  };
+
+  return (
+    <div className="accordion md:w-3/5 m-auto">
+      <div className="mb-5 text-center">
+        <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-10 mt-5 text-secondary md:w-[80%] m-auto">
+          Frequently asked questions
+        </h1>
+        <p>Here are some of the most common frequently asked questions</p>
+      </div>
+
+      {faqList.map((item) => (
+        <AccordionItem
+          key={item.id}
+          isActive={activeItemId === item.id}
+          item={item}
+          onItemClick={handleClickedItem}
+        />
+      ))}
+
+      <div className="bg-green-100 flex items-center justify-center py-10 text-center my-10">
+        <div className="flex items-center justify-center flex-col">
+          <Image
+            src="/icons/avatar-group.png"
+            alt="avatar group"
+            width={100}
+            height={100}
+          />
+
+          <div className="my-5">
+            <h4>Still have questions</h4>
+            <p>{"Can't find the answer you're looking for?"}</p>
+          </div>
+
+          <div className="flex items-center gap-5">
+            <Link href="/contact-us">
+              <button className="bg-green-50 text-green-700 rounded-[0.5rem] py-3 px-5">
+                Contact
+              </button>
+            </Link>
+            <Link href="/faq">
+              <button className="bg-green-600 text-white rounded-[0.5rem] py-3 px-5 ">
+                Go to FAQ page
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Accordion;
+
+export const AccordionItem = ({ item, onItemClick, isActive }) => {
+  return (
+    <div className="accordion-item mb-5">
+      <div
+        className="flex items-center justify-between cursor-pointer"
+        onClick={() => onItemClick(item.id)}>
+        <h1 className="font-bold">{item.ques}</h1>
+        <button className="border flex items-center justify-center border-gray-400 text-gray-400 rounded-full w-[20px] h-[20px] text-center">
+          {`${isActive ? "-" : "+"}`}
+        </button>
+      </div>
+
+      {isActive && (
+        <div className="w-4/5">
+          <p>{item.res}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export const faqList = [
+  {
+    id: "1",
+    ques: "How do I know what item is in my percel?",
+    res: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, aliquam! Quia dolor sunt aliquid. Exercitationem odit itaque officia maiores eaque!",
+  },
+  {
+    id: "2",
+    ques: "What if I was given an incriminating parcel sealed in?",
+    res: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, aliquam! Quia dolor sunt aliquid. Exercitationem odit itaque officia maiores eaque!",
+  },
+  {
+    id: "3",
+    ques: "How do I find parcels going my destination?",
+    res: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, aliquam! Quia dolor sunt aliquid. Exercitationem odit itaque officia maiores eaque!",
+  },
+  {
+    id: "4",
+    ques: "How do I choose if I have several parcel going my destination?",
+    res: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, aliquam! Quia dolor sunt aliquid. Exercitationem odit itaque officia maiores eaque!",
+  },
+  {
+    id: "5",
+    ques: "How do I choose if I have several parcel going my destination?",
+    res: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, aliquam! Quia dolor sunt aliquid. Exercitationem odit itaque officia maiores eaque!",
+  },
+  {
+    id: "6",
+    ques: "How do I choose if I have several parcel going my destination?",
+    res: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, aliquam! Quia dolor sunt aliquid. Exercitationem odit itaque officia maiores eaque!",
+  },
+  {
+    id: "7",
+    ques: "How do I choose if I have several parcel going my destination?",
+    res: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, aliquam! Quia dolor sunt aliquid. Exercitationem odit itaque officia maiores eaque!",
+  },
+];

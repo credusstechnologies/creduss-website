@@ -1,5 +1,5 @@
 import React from "react";
-import GetApp from "./GetApp";
+import GetAppBtn from "./GetAppBtn";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,30 +10,32 @@ import Twitter from "../public/icons/twitter.png";
 import Linkedin from "../public/icons/linkedin.png";
 import Facebook from "../public/icons/facebook.png";
 import Github from "../public/icons/github.png";
-const Footer = () => {
+const Footer = ({ showDownloadApp }) => {
   return (
     <footer>
-      <section className="our-processes py-8 bg-green-200 md:flex md:items-center md:gap-10  md:px-20 px-10">
-        <div>
-          <Image src={FooterImg} alt="an image of user device" />
-        </div>
-        <div className="pt-7 md:pt-0">
-          <h6 className="text-warning">Get started</h6>
-          <div className=" ">
-            <h1
-              className="
-          md:text-[3.75rem] font-bold text-secondary md:leading-[4rem]">
-              Download our app for free
-            </h1>
-            <p className="md:w-[85%] mt-3 mb-3">
-              Discover the convenience of Creduss wherever you go. Our Android
-              app puts the power of efficient movement and delivery in your
-              hands. Download it now to be part of the future.
-            </p>
+      {showDownloadApp && (
+        <section className="our-processes py-8 bg-green-200 md:flex md:items-center md:gap-10  md:px-20 px-10">
+          <div>
+            <Image src={FooterImg} alt="an image of user device" />
           </div>
-          <GetApp />
-        </div>
-      </section>
+          <div className="pt-7 md:pt-0">
+            <h6 className="text-warning">Get started</h6>
+            <div className=" ">
+              <h1
+                className="
+          md:text-[3.75rem] font-bold text-secondary md:leading-[4rem]">
+                Download our app for free
+              </h1>
+              <p className="md:w-[85%] mt-3 mb-3">
+                Discover the convenience of Creduss wherever you go. Our Android
+                app puts the power of efficient movement and delivery in your
+                hands. Download it now to be part of the future.
+              </p>
+            </div>
+            <GetAppBtn />
+          </div>
+        </section>
+      )}
 
       <section className="md:px-20 px-10 py-5 md:flex md:justify-between md:items-center bg-navBg text-white">
         <div>

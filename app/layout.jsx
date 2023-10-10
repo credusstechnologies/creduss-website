@@ -3,7 +3,7 @@ import "./globals.css";
 import "../custom-styles/style.scss";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Providers } from "@/redux/provider";
-//
+
 // import Nav, { SubNav } from "@/components/Nav";
 // import Hero from "@/components/Hero";
 // import Footer from "@/components/Footer";

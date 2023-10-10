@@ -4,7 +4,9 @@ import React from "react";
 const Blog = () => {
   return (
     <Layout>
-      <div>Blog</div>;
+      <div>
+        <h1>COMING SOON!!!!</h1>
+      </div>
     </Layout>
   );
 };

@@ -15,7 +15,8 @@
     "react": "latest",
     "react-dom": "latest",
     "react-redux": "^8.1.2",
-    "sass": "^1.68.0"
+    "sass": "^1.68.0",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "autoprefixer": "latest",

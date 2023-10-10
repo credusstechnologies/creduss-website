@@ -4,7 +4,9 @@ import React from "react";
 const CustomerStories = () => {
   return (
     <Layout>
-      <div>CustomerStories</div>
+      <div>
+        <h1>COMING SOON!!!!</h1>
+      </div>
     </Layout>
   );
 };

@@ -16,7 +16,7 @@ import {
   setActiveSubNav,
   setShowSubNav,
 } from "@/redux/features/global/globalSlice";
-import GetApp from "./GetApp";
+import GetAppBtn from "./GetAppBtn";
 
 const Nav = () => {
   const { showSubNav } = useSelector((state) => state.global);
@@ -24,14 +24,16 @@ const Nav = () => {
 
   const [showMobNav, setShowMobNav] = useState(false);
   const mobNavRef = useRef();
+  // const deskNavRef = useRef();
   const { activeSubNav } = useSelector((state) => state.global);
 
   useClickOutside(mobNavRef, showMobNav, setShowMobNav);
+  // useClickOutside(deskNavRef, showMobNav, setShowMobNav);
+  console.log(showMobNav);
 
+  useEffect(() => {});
   return (
-    <nav
-      ref={mobNavRef}
-      className="px-10 py-5 md:px-20 relative bg-navBg md:flex md:items-center md:justify-between">
+    <nav className="px-10 py-5 md:px-20 relative bg-navBg md:flex md:items-center md:justify-between">
       <div className="flex items-center justify-between">
         <Link href={"/"}>
           <Image src={Logo} alt="logo" />
@@ -46,14 +48,14 @@ const Nav = () => {
 
       <ul className="hidden md:flex md:gap-4 md:items-center md:justify-between">
         {/*START active sub nav */}
-        <li onClick={() => dispatch(setShowSubNav())}>
-          <Link href={activeSubNav?.path}>
-            <i
-              className={`fa-solid fa-chevron-${
-                showSubNav ? "up" : "down"
-              }`}></i>{" "}
-            {activeSubNav?.text}
-          </Link>
+        <li
+          className="cursor-pointer"
+          onClick={() => dispatch(setShowSubNav())}>
+          <i
+            className={`fa-solid fa-chevron-${
+              showSubNav ? "up" : "down"
+            }`}></i>{" "}
+          {activeSubNav?.text}
         </li>
         {/*END active sub nav */}
         {mainNavList.map((nav) => (
@@ -63,13 +65,9 @@ const Nav = () => {
         ))}
       </ul>
 
-      <button
-        className="hidden bg-primary px-3 py-2 md:flex items-center
-            gap-2">
-        <Image src={Android} alt="android icon" />
-        <span>Get the mobile app</span>
-      </button>
-
+      <div className="md:block hidden">
+        <GetAppBtn setShowMobNav={setShowMobNav} />
+      </div>
       {/* <SubNav /> */}
 
       {/* mobile nav specific */}
@@ -138,7 +136,9 @@ const Nav = () => {
               ))}
             </ul>
 
-            <GetApp setShowMobNav={setShowMobNav} />
+            <div className="flex justify-end text-right">
+              <GetAppBtn setShowMobNav={setShowMobNav} />
+            </div>
           </div>
         </div>
       )}
@@ -151,7 +151,12 @@ export default Nav;
 export const SubNav = () => {
   const dispatch = useDispatch();
   const { showSubNav } = useSelector((state) => state.global);
-  console.log(showSubNav);
+  // console.log(showSubNav);
+  //   const [showNav, setShowNav] = useState(showSubNav);
+
+  //   const ref = useRef();
+  //   useClickOutside(ref, showSubNav, dispatch(setShowSubNav()));
+
   return (
     <>
       {showSubNav && (

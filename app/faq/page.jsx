@@ -1,10 +1,14 @@
+"use client";
+import Accordion from "@/components/Accordion";
 import Layout from "@/components/Layout";
 import React from "react";
 
 const FAQ = () => {
   return (
     <Layout>
-      <div>Faq</div>;
+      <section>
+        <Accordion />
+      </section>
     </Layout>
   );
 };

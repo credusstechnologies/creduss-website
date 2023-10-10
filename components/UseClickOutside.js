@@ -5,7 +5,7 @@ const useClickOutside = (ref, state, setState) => {
     document.addEventListener("click", (e) => {
       // if where is being clicked is not same as the ref, change the state to false
       if (!ref.current?.contains(e.target)) {
-        setState(false);
+        setState && setState(false);
       }
     });
   }, [state]);
