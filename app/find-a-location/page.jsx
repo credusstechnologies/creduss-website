@@ -3,8 +3,8 @@ import React from "react";
 
 const FindALocation = () => {
   return (
-    <Layout>
-      <div>FindALocation</div>
+    <Layout showHero={false} showDownloadApp={false}>
+      <div className="mt-[10rem]">COMING SOON!!</div>
     </Layout>
   );
 };

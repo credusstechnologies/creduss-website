@@ -9,7 +9,7 @@ import Accordion from "@/components/Accordion";
 
 const About = () => {
   return (
-    <Layout>
+    <Layout heroBg={"/icons/about-bg.png"}>
       <section className="py-10 px-10 md:px-20">
         <h1 className="md:text-[3.75rem] font-[700] text-center mb-5 text-secondary">
           Our Values
