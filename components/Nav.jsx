@@ -71,6 +71,7 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
           showSubNav={showSubNav}
           activeSubNav={activeSubNav}
           setShowMobNav={setShowMobNav}
+          setShowSubNav={setShowSubNav}
         />
       )}
     </nav>
