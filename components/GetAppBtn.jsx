@@ -8,9 +8,9 @@ const GetAppBtn = ({ setShowMobNav }) => {
       <button
         onClick={() => setShowMobNav(false)}
         className=" bg-primary py-3 px-2 flex items-center justify-center
-            gap-2">
+            gap-2 text-white rounded-[8px] font-medium">
         <Image src={Android} alt="android icon" />
-        <span>Get the mobile app</span>
+        <span>Get the android app</span>
       </button>
     </Link>
   );

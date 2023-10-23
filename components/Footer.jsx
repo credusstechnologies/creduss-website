@@ -19,7 +19,7 @@ const Footer = ({ showDownloadApp }) => {
             <Image src={FooterImg} alt="an image of user device" />
           </div>
           <div className="pt-7 md:pt-0">
-            <h6 className="text-warning">Get started</h6>
+            <h6 className="text-warning-400">Get started</h6>
             <div className=" ">
               <h1
                 className="
@@ -55,7 +55,7 @@ const Footer = ({ showDownloadApp }) => {
           </div>
           <div>
             <button
-              className="bg-warning p-2 w-full"
+              className="bg-warning-400 p-2 w-full"
               style={{ borderRadius: ".4rem" }}>
               Subscribe
             </button>
@@ -75,27 +75,27 @@ const Footer = ({ showDownloadApp }) => {
 
           <div className="mob-footer-nav grid md:grid-cols-3 gap-10">
             <div>
-              <h4 className="mb-3 text-warning">Contact & Support</h4>
+              <h4 className="mb-3 text-warning-400">Contact & Support</h4>
               {FooterList.contactAndSupport.map((item) => (
                 <FooterNav key={item.id} path={item.path} text={item.text} />
               ))}
             </div>
 
             <div>
-              <h4 className="mb-3 text-warning"> Legal</h4>
+              <h4 className="mb-3 text-warning-400"> Legal</h4>
               {FooterList.legal.map((item) => (
                 <FooterNav key={item.id} path={item.path} text={item.text} />
               ))}
             </div>
 
             <div>
-              <h4 className="mb-3 text-warning">Alert</h4>
+              <h4 className="mb-3 text-warning-400">Alert</h4>
               {FooterList.alert.map((item) => (
                 <FooterNav key={item.id} path={item.path} text={item.text} />
               ))}
 
               <div className="hidden md:block ">
-                <h4 className="mb-3 text-warning md:mt-1">Coming soon</h4>
+                <h4 className="mb-3 text-warning-400 md:mt-1">Coming soon</h4>
                 {FooterList.comingSoon.map((item) => (
                   <FooterNav key={item.id} path={item.path} text={item.text} />
                 ))}
@@ -103,7 +103,7 @@ const Footer = ({ showDownloadApp }) => {
             </div>
 
             <div className="md:hidden ">
-              <h4 className="mb-3 text-warning md:mt-1">Coming soon</h4>
+              <h4 className="mb-3 text-warning-400 md:mt-1">Coming soon</h4>
               {FooterList.comingSoon.map((item) => (
                 <FooterNav key={item.id} path={item.path} text={item.text} />
               ))}

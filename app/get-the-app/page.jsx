@@ -20,7 +20,7 @@ const GetTheApp = () => {
 
           <div className="px-10 md:px-0 md:pr-20 ">
             <div>
-              <h6 className="text-warning">GET STARTED</h6>
+              <h6 className="text-warning-500">GET STARTED</h6>
               <h1 className="text-secondary md:text-[3.75rem] md:leading-[4.5rem] font-bold">
                 Download our app
               </h1>

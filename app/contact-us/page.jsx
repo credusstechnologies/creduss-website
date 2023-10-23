@@ -24,7 +24,7 @@ const Contact = () => {
         <div className="md:w-1/2 md:pr-20">
           <form>
             <div>
-              <h6 className="text-warning">Talk to us</h6>
+              <h6 className="text-warning-400">Talk to us</h6>
               <h1 className="text-secondary text-[3.75rem] md:leading-[4.5rem] font-bold">
                 Get in Touch
               </h1>
@@ -134,7 +134,7 @@ const Contact = () => {
               <i className="fa-solid fa-phone text-[1.3rem]"></i>
               <div>
                 <h4 className="font-semibold">PHONE</h4>
-                <p className="text-warning">03 5432 1234</p>
+                <p className="text-warning-500">03 5432 1234</p>
               </div>
             </div>
 
@@ -142,7 +142,7 @@ const Contact = () => {
               <i className="fa-solid fa-fax text-[1.3rem]"></i>
               <div>
                 <h4 className="font-semibold">FAX</h4>
-                <p className="text-warning">03 5432 1234</p>
+                <p className="text-warning-500">03 5432 1234</p>
               </div>
             </div>
 
@@ -150,7 +150,7 @@ const Contact = () => {
               <i className="fa-solid fa-envelope text-[1.3rem]"></i>
               <div>
                 <h4 className="font-semibold">EMAIL</h4>
-                <p className="text-warning">info@creduss.com</p>
+                <p className="text-warning-500">info@creduss.com</p>
               </div>
             </div>
           </div>
