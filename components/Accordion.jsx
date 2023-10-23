@@ -77,7 +77,7 @@ export const AccordionItem = ({ item, onItemClick, isActive }) => {
         <h1 className="font-bold">{item.ques}</h1>
         <button
           className={`border border-gray-400 text-gray-400 w-[20px] min-w-[20px] h-[20px] min-h-[20px] flex items-center justify-center p-1 ${
-            isActive ? "text-warning border-warning" : ""
+            isActive ? "text-warning-500 border-warning-500" : ""
           }`}
           style={{ borderRadius: "50%" }}>
           {`${isActive ? "-" : "+"}`}

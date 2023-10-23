@@ -24,7 +24,7 @@ const Hero = ({
         {/* <div className="md:block font-bold md:leading-[5rem] ">
           <h1 className=" md:text-[5.625rem] ">TRANSFORMING</h1>
           <h1 className="md:text-[2.6875rem] mt-0">
-            MOVEMENT & <span className="text-warning">PACKAGE</span> DELIVERY
+            MOVEMENT & <span className="text-warning-500">PACKAGE</span> DELIVERY
           </h1>
         </div> */}
 
@@ -45,7 +45,7 @@ const Hero = ({
             } text-[1.875rem] mt-0`}>
             {textContents.subHeader.split(" ").map((item, i) =>
               item === textContents.specialWord ? (
-                <span className="text-warning" key={i}>
+                <span className="text-warning-400" key={i}>
                   {item + " "}
                 </span>
               ) : (
@@ -56,7 +56,7 @@ const Hero = ({
         </div>
         <div
           className={`${
-            showHeroImg ? "bg-warning p-6" : ""
+            showHeroImg ? "bg-warning-500 p-6" : ""
           } rounded-2xl mt-3 mb-3`}>
           <p className="md:w-[80%]">{textContents.desc}</p>
         </div>
@@ -69,7 +69,7 @@ const Hero = ({
           </div>
         ) : (
           <div className="md:w-[70%] flex-col md:flex-row inline md:flex md:items-center gap-2 ">
-            <div className="bg-warning p-2 rounded-[0.5rem] w-full">
+            <div className="bg-warning-500 p-2 rounded-[0.5rem] w-full">
               <div className="bg-white p-2 flex items-center gap-2 mb-3 md:mb-0 rounded-[.4rem]">
                 <i className="fa-solid fa-magnifying-glass text-gray-400"></i>
                 <input
