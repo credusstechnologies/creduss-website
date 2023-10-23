@@ -6,7 +6,15 @@ import Accordion from "@/components/Accordion";
 
 const Local = () => {
   return (
-    <Layout>
+    <Layout
+      heroBg={"/icons/local-bg.png"}
+      textContent={{
+        mainHeader: "SENDING & RECEIVING",
+        mainHeaderFs: "72px",
+        subHeader: "PACKAGES LOCALLY",
+        specialWord: "PACKAGES",
+        desc: "Welcome to Creduss Local Operations, where we make sending and receiving packages in your community effortless and efficient. Discover how our platform works seamlessly to connect you with trusted couriers and ensure your packages reach their destination safely.",
+      }}>
       <main>
         <section className="px-10 md:px-20 py-10">
           <h1 className="text-secondary text-[2.25rem] text-center md:leading-[4.5rem] font-bold">
@@ -33,7 +41,7 @@ const Local = () => {
 
         <section className="px-10 md:px-20 py-10 text-white local-steps">
           <div className="w-[80%] mb-5">
-            <h6 className="text-warning">
+            <h6 className="text-warning-400">
               Simplify Local Deliveries with Creduss
             </h6>
             <h1 className="text-[1.875rem] md:text-[3.75rem] md:leading-[4.5rem] font-bold mb-5">
@@ -51,7 +59,7 @@ const Local = () => {
               <div
                 key={i.id}
                 className="flex items-center justify-between gap-5">
-                <h1 className="border-4 border-warning w-[1.875rem] h-[1.875rem] md:w-[3.125rem] md:h-[3.125rem] flex items-center justify-center rounded-full p-5">
+                <h1 className="border-4 border-warning-500 w-[1.875rem] h-[1.875rem] md:w-[3.125rem] md:h-[3.125rem] flex items-center justify-center rounded-full p-5">
                   {i.id}
                 </h1>
 

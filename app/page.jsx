@@ -12,11 +12,15 @@ import Accordion from "@/components/Accordion";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout
+      showHeroImg={true}
+      linearGradient={
+        "linear-gradient(170deg, rgba(16, 19, 35, 0.00) 6.17%, #101323 70.13%)"
+      }>
       <main className="home">
         <section className=" md:pt-15 pt-10 ">
           <section className="md:px-20 px-10 md:w-[60%] md:pr-1">
-            <h6 className="text-warning">Our Achievements</h6>
+            <h6 className="text-warning-400">Our Achievements</h6>
             <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-2 text-secondary">
               We manage logistics from all over the world
             </h1>
@@ -44,9 +48,9 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="md:px-20 px-10 py-10 flex flex-col-reverse md:items-center md:flex-row md:justify-between bg-green-100">
+          <section className="md:px-20 px-10 py-10 flex flex-col-reverse md:items-center md:flex-row md:justify-between bg-[#f0f9ff">
             <div className="md:w-[45%] mt-4 md:mt-0">
-              <h6 className="text-warning">Unique features</h6>
+              <h6 className="text-warning-400">Unique features</h6>
               <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-2 text-secondary">
                 You can send and deliver anything
               </h1>
@@ -104,7 +108,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="bg-warning py-10 px-10 md:px-20">
+          <section className="bg-warning-400 md:py-10 pt-10 px-10 md:px-20">
             <h6 className="text-secondary text-center">Testimonials</h6>
             <h1 className="text-center md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-10 mt-5 text-white md:w-[80%] m-auto">
               Our customers have something to say to you
@@ -125,11 +129,11 @@ export default function Home() {
 export const Achievement = ({ counts, title, desc }) => {
   return (
     <div>
-      <h1 className="md:text-[2.25rem] text-[1.5rem] font-bold text-warning">
+      <h1 className="md:text-[2.25rem] text-[1.5rem] font-bold text-warning-400">
         {counts}
       </h1>
       <h3 className="font-bold text-secondary">{title}</h3>
-      <p className="text-[#667085]">{desc}</p>export const faqList = [{}];
+      <p className="text-[#667085]">{desc}</p>
     </div>
   );
 };

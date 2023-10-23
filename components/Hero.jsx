@@ -5,123 +5,93 @@ import Image from "next/image";
 import HeroImg from "../public/icons/hero-img.png";
 import GetAppBtn from "./GetAppBtn";
 
-// class Arr {
-//   #element;
-//   constructor(ele) {
-//     this.#element = ele;
-//   }
-
-//   join(joiner) {
-//     let a = "";
-//     for (const i of this.#element) {
-//       a += `${i}${joiner}`;
-//     }
-//     return a;
-//   }
-
-//   map(fun) {
-//     const a = [];
-//     for (const i of this.#element) {
-//       a.push(fun(i));
-//     }
-//     return a;
-//   }
-// }
-
-function Arr(element) {
-  this.map = (fun) => {
-    const a = [];
-    for (const i of element) {
-      a.push(fun(i));
-    }
-    return a;
-  };
-
-  this.join = (joiner) => {
-    console.log("From function");
-    let a = "";
-    for (const i of element) {
-      a += `${i}${joiner}`;
-    }
-    return a;
-  };
-}
-
-const Hero = ({ heroProps }) => {
-  const { heroContent, specifiedWord } = heroProps;
-
-  const text = "TRANSFORMING MOVEMENT & PACKAGE DELIVERY";
-
-  // console.log(
-  //   text.split(" ").map((item, i) =>
-  //     item == "PACKAGE" ? (
-  //       <span key={i} className="text-warning">
-  //         {item}
-  //       </span>
-  //     ) : (
-  //       item
-  //     )
-  //   )
-  // );
-
-  const array = new Arr([1, {}, 2]);
-
-  console.log(array.join(" "));
-  // console.log([1, {}, 2].map((el) => String(el)));
-
+const Hero = ({
+  heroBg,
+  bgPosition,
+  bgSize,
+  linearGradient,
+  showHeroImg,
+  showSearchField,
+  textContents,
+}) => {
   return (
-    <>
-      <div
-        className={`hero relative overflow-hidden md:px-20 px-10 bg-secondary md:flex md:items-center`}>
-        <section className="">
-          <div className="md:block font-bold md:leading-[5rem]">
-            {/* <h1 className=" md:text-[5.625rem] ">TRANSFORMING</h1>
-            <h1 className="md:text-[2.6875rem] mt-0">
-              MOVEMENT & <span className="text-warning">PACKAGE</span> DELIVERY
-            </h1> */}
-            {/* TODO: figure out how to fox the [object Object] that gets rendered when an actual string is returned */}
-            <h1 className=" md:text-[5.625rem]">
-              <span className="">
-                {text.split(" ").map((word, i) =>
-                  word.toLowerCase() == specifiedWord.toLowerCase() ? (
-                    <span key={i} className="text-warning">
-                      {word + " "}
-                    </span>
-                  ) : (
-                    <span key={word} className="text-success">
-                      {word}{" "}
-                    </span>
-                  )
-                )}
-              </span>
-            </h1>
-          </div>
-          {/* <div className="md:hidden font-bold">
-            <h1 className=" text-[4.5rem] ">TRANS-FORMING</h1>
-            <h1 className="text-[1.875rem] md:text-[2.6875rem] mt-0">
-              MOVEMENT &<span className="text-warning">PACKAGE</span> DELIVERY
-            </h1>
-          </div> */}
-          <div className="bg-warning p-6 rounded-2xl mt-3 mb-3">
-            <p className="md:w-[80%]">
-              {`Welcome to Creduss, where we're redefining the way you move and
-            deliver. Say goodbye to the old norms and embrace a new era of
-            seamless mobility and efficient package delivery.`}
-            </p>
-          </div>
+    <div
+      style={{
+        background: `${linearGradient}, url(${heroBg}) no-repeat ${bgPosition}/${bgSize}`,
+      }}
+      className={`hero relative overflow-hidden md:px-20 px-10 bg-secondary md:flex md:items-center`}>
+      <section className="lg:max-w-[798px] ">
+        {/* <div className="md:block font-bold md:leading-[5rem] ">
+          <h1 className=" md:text-[5.625rem] ">TRANSFORMING</h1>
+          <h1 className="md:text-[2.6875rem] mt-0">
+            MOVEMENT & <span className="text-warning-500">PACKAGE</span> DELIVERY
+          </h1>
+        </div> */}
+
+        <div className="font-bold md:leading-[5rem]">
+          <h1
+            className={`text-[4.5rem] break-words ${
+              textContents.mainHeaderFs
+                ? `text-[${textContents.mainHeaderFs}]`
+                : "md:text-[5.625rem] "
+            }`}>
+            {textContents.mainHeader}
+          </h1>
+          <h1
+            className={`${
+              textContents.subHeaderFs
+                ? `text-[${textContents.subHeaderFs}]`
+                : "md:text-[2.6875rem]"
+            } text-[1.875rem] mt-0`}>
+            {textContents.subHeader.split(" ").map((item, i) =>
+              item === textContents.specialWord ? (
+                <span className="text-warning-400" key={i}>
+                  {item + " "}
+                </span>
+              ) : (
+                <span key={i}>{item + " "}</span>
+              )
+            )}
+          </h1>
+        </div>
+        <div
+          className={`${
+            showHeroImg ? "bg-warning-500 p-6" : ""
+          } rounded-2xl mt-3 mb-3`}>
+          <p className="md:w-[80%]">{textContents.desc}</p>
+        </div>
+        {!showSearchField ? (
           <div className="flex-col md:flex-row inline md:flex md:items-center gap-2">
             <button className="rounded-[0.5rem] my-3 py-3 px-2 bg-white text-secondary">
               learn more
             </button>
             <GetAppBtn />
           </div>
-        </section>
+        ) : (
+          <div className="md:w-[70%] flex-col md:flex-row inline md:flex md:items-center gap-2 ">
+            <div className="bg-warning-500 p-2 rounded-[0.5rem] w-full">
+              <div className="bg-white p-2 flex items-center gap-2 mb-3 md:mb-0 rounded-[.4rem]">
+                <i className="fa-solid fa-magnifying-glass text-gray-400"></i>
+                <input
+                  className="focus:outline-none block w-full h-full text-black"
+                  type="text"
+                  placeholder="Search for stories"
+                />
+              </div>
+            </div>
+            <button className="font-bold rounded-[0.5rem] my-3 py-3 px-5 bg-green-600 text-white">
+              Search
+            </button>
+          </div>
+        )}
+      </section>
 
-        <div className="hero-img-wrapper hidden md:block">
+      <div className=" hero-img-wrapper hidden md:block">
+        {showHeroImg && (
           <Image className="hero-img " src={HeroImg} alt="hero img" />
-        </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

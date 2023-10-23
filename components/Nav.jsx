@@ -71,6 +71,7 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
           showSubNav={showSubNav}
           activeSubNav={activeSubNav}
           setShowMobNav={setShowMobNav}
+          setShowSubNav={setShowSubNav}
         />
       )}
     </nav>
@@ -89,9 +90,9 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
       {showSubNav && (
         <nav
           ref={ref}
-          className="absolute w-full left-0 hidden md:flex px-10 py-5 bg-white text-black  justify-between gap-5 z-20">
+          className="absolute w-full left-0 hidden md:flex px-10 py-5 bg-white text-black  justify-between gap-5 ">
           <div>
-            <h6 className="text-warning">Resources</h6>
+            <h6 className="text-warning-500">Resources</h6>
             {subNavList.resources.map((res) => (
               <Link
                 onClick={() => {
@@ -111,7 +112,7 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
           </div>
 
           <div>
-            <h6 className="text-warning">Company</h6>
+            <h6 className="text-warning-500">Company</h6>
             {subNavList.company.map((com) => (
               <Link
                 onClick={() => {
@@ -131,7 +132,7 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
           </div>
 
           <div>
-            <h6 className="text-warning">Featured</h6>
+            <h6 className="text-warning-500">Featured</h6>
             <Image className="mt-[1.5rem] mb-[1.5rem]" src={Lady} alt="lady" />
             <h3 className="font-medium">Success story</h3>
             <p>

@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       colors: {
         primary: "#2fb070",
-        warning: "#F79009",
+        "warning-400": "#fdb022",
+        "warning-500": "#F79009",
         secondary: "#101323",
         navBg: "#101828",
         outerPxLg: "20",

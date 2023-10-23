@@ -9,7 +9,13 @@ import {
 import { useDispatch } from "react-redux";
 import useClickOutside from "../UseClickOutside";
 
-const MobNav = ({ showMobNav, showSubNav, activeSubNav, setShowMobNav }) => {
+const MobNav = ({
+  showMobNav,
+  showSubNav,
+  activeSubNav,
+  setShowMobNav,
+  setShowSubNav,
+}) => {
   const ref = useRef();
   const dispatch = useDispatch();
 
@@ -29,14 +35,12 @@ const MobNav = ({ showMobNav, showSubNav, activeSubNav, setShowMobNav }) => {
       <div className="h-screen p-3 flex flex-col justify-between text-right">
         <ul className="flex flex-col gap-[1.5rem]  ">
           {/* active sub mob nav */}
-          <li className="font-bold" onClick={() => dispatch(setShowSubNav())}>
-            <Link href={activeSubNav?.path}>
-              <i
-                className={`fa-solid fa-chevron-${
-                  showSubNav ? "up" : "down"
-                }`}></i>{" "}
-              {activeSubNav?.text}
-            </Link>
+          <li className="font-bold" onClick={() => setShowSubNav(!showSubNav)}>
+            <i
+              className={`fa-solid fa-chevron-${
+                showSubNav ? "up" : "down"
+              }`}></i>{" "}
+            {activeSubNav?.text}
           </li>
           {/* mobile specific */}
           {showSubNav && (

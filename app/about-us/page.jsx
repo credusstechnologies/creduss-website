@@ -9,7 +9,7 @@ import Accordion from "@/components/Accordion";
 
 const About = () => {
   return (
-    <Layout>
+    <Layout heroBg={"/icons/about-bg.png"}>
       <section className="py-10 px-10 md:px-20">
         <h1 className="md:text-[3.75rem] font-[700] text-center mb-5 text-secondary">
           Our Values
@@ -57,7 +57,7 @@ const About = () => {
 
         <div className="md:w-1/2 md:p-20 ">
           <div className=" ">
-            <h6 className="text-warning">Who we are</h6>
+            <h6 className="text-warning-400">Who we are</h6>
             <h1 className="text-secondary text-[3.75rem] md:leading-[4.5rem] font-bold">
               Global online logistics and courier
             </h1>
@@ -78,7 +78,7 @@ const About = () => {
       <section className="md:flex md:items-center flex-col-reverse md:flex-row md:justify-between gap-20 px-10 md:px-0 pl-10 md:pl-20">
         <div className="md:w-1/2   md:p-20 ">
           <div className="  ">
-            <h6 className="text-warning">What we do</h6>
+            <h6 className="text-warning-400">What we do</h6>
             <h1 className="text-secondary text-[3.75rem] md:leading-[4.5rem] font-bold">
               Enabling sales through on-time delivery
             </h1>
