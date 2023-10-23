@@ -71,6 +71,7 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
           showSubNav={showSubNav}
           activeSubNav={activeSubNav}
           setShowMobNav={setShowMobNav}
+          setShowSubNav={setShowSubNav}
         />
       )}
     </nav>
@@ -89,7 +90,7 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
       {showSubNav && (
         <nav
           ref={ref}
-          className="absolute w-full left-0 hidden md:flex px-10 py-5 bg-white text-black  justify-between gap-5 z-20">
+          className="absolute w-full left-0 hidden md:flex px-10 py-5 bg-white text-black  justify-between gap-5 ">
           <div>
             <h6 className="text-warning">Resources</h6>
             {subNavList.resources.map((res) => (

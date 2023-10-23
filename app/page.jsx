@@ -12,7 +12,11 @@ import Accordion from "@/components/Accordion";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout
+      showHeroImg={true}
+      linearGradient={
+        "linear-gradient(170deg, rgba(16, 19, 35, 0.00) 6.17%, #101323 70.13%)"
+      }>
       <main className="home">
         <section className=" md:pt-15 pt-10 ">
           <section className="md:px-20 px-10 md:w-[60%] md:pr-1">
@@ -104,7 +108,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="bg-warning py-10 px-10 md:px-20">
+          <section className="bg-warning md:py-10 pt-10 px-10 md:px-20">
             <h6 className="text-secondary text-center">Testimonials</h6>
             <h1 className="text-center md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-10 mt-5 text-white md:w-[80%] m-auto">
               Our customers have something to say to you
@@ -129,7 +133,7 @@ export const Achievement = ({ counts, title, desc }) => {
         {counts}
       </h1>
       <h3 className="font-bold text-secondary">{title}</h3>
-      <p className="text-[#667085]">{desc}</p>export const faqList = [{}];
+      <p className="text-[#667085]">{desc}</p>
     </div>
   );
 };

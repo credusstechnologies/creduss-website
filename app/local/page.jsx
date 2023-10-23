@@ -6,7 +6,15 @@ import Accordion from "@/components/Accordion";
 
 const Local = () => {
   return (
-    <Layout>
+    <Layout
+      heroBg={"/icons/local-bg.png"}
+      textContent={{
+        mainHeader: "SENDING & RECEIVING",
+        mainHeaderFs: "72px",
+        subHeader: "PACKAGES LOCALLY",
+        specialWord: "PACKAGES",
+        desc: "Welcome to Creduss Local Operations, where we make sending and receiving packages in your community effortless and efficient. Discover how our platform works seamlessly to connect you with trusted couriers and ensure your packages reach their destination safely.",
+      }}>
       <main>
         <section className="px-10 md:px-20 py-10">
           <h1 className="text-secondary text-[2.25rem] text-center md:leading-[4.5rem] font-bold">
