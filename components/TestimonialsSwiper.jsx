@@ -14,12 +14,7 @@ import SwiperButtonPrev from "./SwiperButtonPrev";
 
 const TestimonialsSwiper = () => {
   return (
-    <div
-      className="testimonials-swiper text-black"
-      style={{
-        height: "auto",
-        margin: "auto",
-      }}>
+    <div className="testimonials-swiper text-black">
       <Swiper
         className="mySwiper"
         modules={[Autoplay]}
@@ -28,9 +23,7 @@ const TestimonialsSwiper = () => {
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
-        }}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}>
+        }}>
         {reviewsList.map((item) => (
           <SwiperSlide key={item.id} className="">
             <div className="">
@@ -55,7 +48,7 @@ const TestimonialsSwiper = () => {
           </SwiperSlide>
         ))}
 
-        <div className="custom-swiper-controls ">
+        <div className="custom-swiper-controls">
           <SwiperButtonPrev>
             <i className="fa-solid fa-chevron-left text-[#34C47C]"></i>
           </SwiperButtonPrev>

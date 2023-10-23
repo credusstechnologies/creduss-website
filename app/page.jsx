@@ -108,7 +108,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="bg-warning py-10 px-10 md:px-20">
+          <section className="bg-warning md:py-10 pt-10 px-10 md:px-20">
             <h6 className="text-secondary text-center">Testimonials</h6>
             <h1 className="text-center md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-10 mt-5 text-white md:w-[80%] m-auto">
               Our customers have something to say to you

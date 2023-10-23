@@ -15,15 +15,9 @@ import SwiperButtonPrev from "./SwiperButtonPrev";
 
 const WhyCredussSwiper = () => {
   return (
-    <div
-      className="why-creduss-swiper text-black"
-      style={{
-        width: "80%",
-        height: "400px",
-        margin: "auto",
-      }}>
+    <div className="why-creduss-swiper text-black">
       <Swiper
-        className="mySwiper"
+        className="mySwiper md:w-[90%]"
         modules={[Pagination, Navigation, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
@@ -38,7 +32,7 @@ const WhyCredussSwiper = () => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}>
         {WhyCredussList.map((item) => (
-          <SwiperSlide key={item.id} className="flex-col md:flex-row">
+          <SwiperSlide key={item.id}>
             <div className="md:w-1/2">
               <h1 className="font-bold mb-3">{item.title}</h1>
               <p className="text-justify">{item.text}</p>
@@ -46,12 +40,8 @@ const WhyCredussSwiper = () => {
 
             <div className="md:w-1/2">
               <Image
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-                width={200}
-                height={200}
+                width={400}
+                height={400}
                 src={item.img}
                 alt="why creduss swiper"
               />
