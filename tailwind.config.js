@@ -17,6 +17,10 @@ module.exports = {
         outerPxSm: "10",
       },
 
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
