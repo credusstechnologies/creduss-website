@@ -14,7 +14,7 @@ import { Providers } from "@/redux/provider";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="font-inter">
       <Providers>
         <body>{children}</body>
       </Providers>
