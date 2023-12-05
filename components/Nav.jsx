@@ -5,6 +5,7 @@ import Link from "next/link";
 import { mainNav, subNav } from "@/app/layout";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 
 import Logo from "../public/icons/logo.png";
@@ -25,9 +26,10 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
   const { activeSubNav } = useSelector((state) => state.global);
   const [showMobNav, setShowMobNav] = useState(false);
 
-  useEffect(() => {});
+  const pathname = usePathname();
+
   return (
-    <nav className="px-10 py-5 md:px-20 relative bg-navBg md:flex md:items-center md:justify-between">
+    <nav className="px-10 py-5 md:px-20 relative bg-navBg md:flex md:items-center md:justify-between header-nav">
       <div className="flex items-center justify-between">
         {/* logo and mobNav hamburger */}
         <Link href={"/"}>
@@ -41,20 +43,24 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
         </button>
       </div>
 
-      <ul className="hidden md:flex md:gap-4 md:items-center md:justify-between">
+      <ul className="hidden md:flex md:gap-[32px] md:items-center md:justify-between">
         {/* desktop only nav items */}
         <li
-          className="cursor-pointer"
+          className={`${
+            pathname === activeSubNav?.path ? "active-link" : ""
+          } cursor-pointer`}
           onClick={() => setShowSubNav(!showSubNav)}>
           <i
             className={`fa-solid fa-chevron-${
               showSubNav ? "up" : "down"
             }`}></i>{" "}
-          {activeSubNav?.text}
+          {activeSubNav?.text || "Contact us"}
         </li>
 
         {mainNavList.map((nav) => (
-          <li key={nav.id}>
+          <li
+            className={pathname === nav.path ? "active-link" : ""}
+            key={nav.id}>
             <Link href={nav.path}>{nav.text}</Link>
           </li>
         ))}

@@ -1,13 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  activeSubNav: {
-    id: "1",
-    icon: "fa-solid fa-user-group",
-    text: "About us",
-    desc: "Learn about our story and our mission statement.",
-    path: "/about-us",
-  },
+  activeSubNav: null,
   showSubNav: false,
 };
 

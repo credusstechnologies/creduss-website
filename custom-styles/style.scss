@@ -2,6 +2,51 @@ html {
   font-family: "Inter", sans-serif;
 }
 
+.header-nav {
+  ul > li {
+    position: relative;
+
+    // background: green;
+
+    &.active-link::after,
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 29px;
+      border-radius: 100px;
+      background: #fdb022;
+
+      position: absolute;
+      bottom: -2px;
+
+      transform-origin: bottom left;
+      transition: transform 0.3s ease;
+    }
+
+    &.active-link {
+      position: relative;
+      // background: red;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &::after {
+      transform: scaleX(0);
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &.active-link {
+      transform: scaleX(1);
+    }
+  }
+}
+
 .hero {
   min-height: 100vh;
   margin-top: 5rem;
