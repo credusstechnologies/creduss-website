@@ -37,11 +37,11 @@ const Layout = ({
   const [showSubNav, setShowSubNav] = useState(false);
 
   return (
-    <body className="layout">
+    <body className="layout ">
       <header
         className={`relative ${
-          !showHero ? "h-auto" : "min-h-screen"
-        } bg-secondary text-white`}>
+          !showHero ? "h-auto" : "min-h-[100vh]"
+        } bg-secondary text-white header `}>
         <div className="fixed w-full left-0 top-0 z-40">
           <Nav showSubNav={showSubNav} setShowSubNav={setShowSubNav} />
           <SubNav showSubNav={showSubNav} setShowSubNav={setShowSubNav} />
