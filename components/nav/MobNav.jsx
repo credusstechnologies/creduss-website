@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link";
-import GetAppBtn from "../GetAppBtn";
+import Button from "../Button";
 import { mainNavList, subNavList } from "../Nav";
 import {
   setActiveSubNav,
@@ -84,7 +84,9 @@ const MobNav = ({
         </ul>
 
         <div className="flex justify-end text-right">
-          <GetAppBtn setShowMobNav={setShowMobNav} />
+          <Button className="py-[10px] px-[18px] " onClick={setShowMobNav}>
+            Get the mobile app
+          </Button>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import GetAppBtn from "./GetAppBtn";
+import Button from "./Button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,7 +32,7 @@ const Footer = ({ showDownloadApp }) => {
                 hands. Download it now to be part of the future.
               </p>
             </div>
-            <GetAppBtn />
+            <Button />
           </div>
         </section>
       )}

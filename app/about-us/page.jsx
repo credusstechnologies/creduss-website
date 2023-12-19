@@ -1,5 +1,5 @@
 "use client";
-import GetAppBtn from "@/components/GetAppBtn";
+import Button from "@/components/Button";
 import Layout from "@/components/Layout";
 import Image from "next/image";
 
@@ -70,7 +70,7 @@ const About = () => {
               to anywhere in the world faster and cheaper. They can also use the
               platform to earn while they are travelling.
             </p>
-            <GetAppBtn />
+            <Button />
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ const About = () => {
               time. Buy online, ship with creduss, contract an associate going
               to the destination of your orders, receive your parcel on arrival.
             </p>
-            <GetAppBtn />
+            <Button />
           </div>
         </div>
 

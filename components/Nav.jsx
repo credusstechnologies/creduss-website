@@ -17,7 +17,7 @@ import {
   setActiveSubNav,
   setShowSubNav,
 } from "@/redux/features/global/globalSlice";
-import GetAppBtn from "./GetAppBtn";
+import Button from "./Button";
 import MobNav from "./nav/MobNav";
 
 const Nav = ({ showSubNav, setShowSubNav }) => {
@@ -67,7 +67,7 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
       </ul>
 
       <div className="md:block hidden">
-        <GetAppBtn setShowMobNav={setShowMobNav} />
+        <Button className="py-[10px] px-[18px]">Get the mobile app</Button>
       </div>
 
       {/* mobile nav specific */}

@@ -40,7 +40,7 @@ const Layout = ({
     <body className="layout ">
       <header
         className={`relative ${
-          !showHero ? "h-auto" : "min-h-[100vh]"
+          showHero ? "min-h-[100vh] pt-[9rem]" : ""
         } bg-secondary text-white header `}>
         <div className="fixed w-full left-0 top-0 z-40">
           <Nav showSubNav={showSubNav} setShowSubNav={setShowSubNav} />

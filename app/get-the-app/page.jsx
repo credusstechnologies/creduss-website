@@ -12,7 +12,7 @@ import HandArrow from "../../public/icons/hand-arrow.png";
 const GetTheApp = () => {
   return (
     <Layout showDownloadApp={false} showHero={false}>
-      <main className="pt-20">
+      <main className="pt-[3rem]">
         <section className="bg-green-200 flex items-center gap-10 py-10">
           <div className="md:w-1/2">
             <Image src={MobileApp} alt="mobile app view" />

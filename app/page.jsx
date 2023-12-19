@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import Map from "../public/icons/map.png";
 import FeaturesImg from "../public/icons/features.png";
-import GetAppBtn from "@/components/GetAppBtn";
+import Button from "@/components/Button";
 import WhyCredussSwiper from "@/components/WhyCredussSwiper";
 import TestimonialsSwiper from "@/components/TestimonialsSwiper";
 import Accordion from "@/components/Accordion";
@@ -59,7 +59,7 @@ export default function Home() {
                 travels can be more than just a journey – they can be an
                 opportunity. Become a courier on your trips and earn.
               </p>
-              <GetAppBtn />
+              <Button />
             </div>
 
             <div className="">

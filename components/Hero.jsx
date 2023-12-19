@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 import HeroImg from "../public/icons/hero-img.png";
-import GetAppBtn from "./GetAppBtn";
+import Button from "./Button";
 
 const Hero = ({
   heroBg,
@@ -62,10 +62,10 @@ const Hero = ({
         </div>
         {!showSearchField ? (
           <div className="flex-col md:flex-row inline md:flex md:items-center gap-2">
-            <button className="rounded-[0.5rem] my-3 py-3 px-2 bg-white text-secondary">
+            <Button className="my-3 py-3 px-2 bg-white text-secondary">
               learn more
-            </button>
-            <GetAppBtn />
+            </Button>
+            <Button className="py-[16px] px-[28px]  ">Get the mobile app </Button>
           </div>
         ) : (
           <div className="md:w-[70%] flex-col md:flex-row inline md:flex md:items-center gap-2 ">
