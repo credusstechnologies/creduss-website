@@ -59,7 +59,7 @@ export default function Home() {
                 travels can be more than just a journey – they can be an
                 opportunity. Become a courier on your trips and earn.
               </p>
-              <Button />
+              <Button twStyles="px-7 py-4 text-white" />
             </div>
 
             <div className="">

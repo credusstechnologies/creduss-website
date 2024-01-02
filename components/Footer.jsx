@@ -32,7 +32,7 @@ const Footer = ({ showDownloadApp }) => {
                 hands. Download it now to be part of the future.
               </p>
             </div>
-            <Button />
+            <Button twStyles="px-7 py-4 text-white" />
           </div>
         </section>
       )}
@@ -44,7 +44,7 @@ const Footer = ({ showDownloadApp }) => {
         </div>
         <div className="md:flex md:items-center md:gap-5 mt-7 md:mt-0">
           <div
-            className="bg-white p-2 flex items-center gap-2 mb-3 md:mb-0"
+            className="bg-white px-3.5 py-2.5 flex items-center gap-2 mb-3 md:mb-0"
             style={{ borderRadius: ".4rem" }}>
             <Image className="inline" src={Mail} alt="mail icon" />
             <input
@@ -54,11 +54,11 @@ const Footer = ({ showDownloadApp }) => {
             />
           </div>
           <div>
-            <button
-              className="bg-warning-400 p-2 w-full"
-              style={{ borderRadius: ".4rem" }}>
-              Subscribe
-            </button>
+            <Button
+              label="Subscribe"
+              twStyles="px-[18px] py-2.5 bg-amber-400"
+              showIcon={false}
+            />
           </div>
         </div>
       </section>

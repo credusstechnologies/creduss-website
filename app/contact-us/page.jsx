@@ -122,7 +122,7 @@ const Contact = () => {
               </div>
 
               <input
-                className="bg-green-600 text-white h-[50px] cursor-pointer"
+                className="bg-green-600 rounded-lg text-base font-semibold text-white px-[18px] py-2.5 cursor-pointer"
                 type="submit"
                 value="Submit"
               />

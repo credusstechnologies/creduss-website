@@ -67,7 +67,7 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
       </ul>
 
       <div className="md:block hidden">
-        <Button className="py-[10px] px-[18px]">Get the mobile app</Button>
+        <Button twStyles="px-[18px] py-2.5" />
       </div>
 
       {/* mobile nav specific */}

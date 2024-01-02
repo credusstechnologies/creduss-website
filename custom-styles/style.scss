@@ -259,6 +259,11 @@ html {
 }
 
 footer {
+  ::placeholder {
+    font-weight: bold;
+    color: #667085;
+  }
+
   .our-processes {
     img {
       transform: scale(1.1);

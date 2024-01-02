@@ -70,7 +70,7 @@ const About = () => {
               to anywhere in the world faster and cheaper. They can also use the
               platform to earn while they are travelling.
             </p>
-            <Button />
+            <Button twStyles="px-7 py-4 text-white" />
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ const About = () => {
               time. Buy online, ship with creduss, contract an associate going
               to the destination of your orders, receive your parcel on arrival.
             </p>
-            <Button />
+            <Button twStyles="px-7 py-4 text-white" />
           </div>
         </div>
 

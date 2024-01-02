@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Button from "./Button";
 
 const Accordion = () => {
   // state holds the ID of active accordion item
   const [activeItemId, setActiveItemId] = useState(null);
+
+  const pathname = usePathname();
 
   // fxn that checks if the ID of clicked accordion item has already been clicked and set as activeItemId
   // fxn takes in the ID of clicked accordion item
@@ -34,7 +37,7 @@ const Accordion = () => {
         />
       ))}
 
-      <div className="bg-green-100 flex items-center justify-center py-10 text-center my-10">
+      <div className="bg-slate-50 flex items-center justify-center py-10 text-center my-10">
         <div className="flex items-center justify-center flex-col">
           <Image
             src="/icons/avatar-group.png"
@@ -49,16 +52,20 @@ const Accordion = () => {
           </div>
 
           <div className="flex items-center gap-5">
-            <Link href="/contact-us">
-              <button className="bg-green-50 text-green-700 rounded-[0.5rem] py-3 px-5">
-                Contact
-              </button>
-            </Link>
-            <Link href="/faq">
-              <button className="bg-green-600 text-white rounded-[0.5rem] py-3 px-5 ">
-                Go to FAQ page
-              </button>
-            </Link>
+            <Button
+              label="Contact us"
+              href="#"
+              twStyles="px-[18px] py-2.5 bg-emerald-100 text-green-600"
+              showIcon={false}
+            />
+            {pathname !== "/faq" && (
+              <Button
+                label="Go to FAQ page"
+                href="/faq"
+                twStyles="px-[18px] py-2.5 text-white"
+                showIcon={false}
+              />
+            )}
           </div>
         </div>
       </div>

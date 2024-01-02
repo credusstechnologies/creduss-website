@@ -84,9 +84,10 @@ const MobNav = ({
         </ul>
 
         <div className="flex justify-end text-right">
-          <Button className="py-[10px] px-[18px] " onClick={setShowMobNav}>
-            Get the mobile app
-          </Button>
+          <Button
+            twStyles="px-[18px] py-2.5 text-white"
+            onClick={setShowMobNav}
+          />
         </div>
       </div>
     </div>

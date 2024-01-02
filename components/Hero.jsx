@@ -57,19 +57,22 @@ const Hero = ({
         <div
           className={`${
             showHeroImg ? "bg-warning-500 p-6" : ""
-          } rounded-2xl mt-3 mb-3`}>
+          } rounded-2xl my-3 mb-3`}>
           <p className="md:w-[80%]">{textContents.desc}</p>
         </div>
         {!showSearchField ? (
-          <div className="flex-col md:flex-row inline md:flex md:items-center gap-2">
-            <Button className="my-3 py-3 px-2 bg-white text-secondary">
-              learn more
-            </Button>
-            <Button className="py-[16px] px-[28px]  ">Get the mobile app </Button>
+          <div className=" flex-col md:flex-row inline md:flex md:items-center gap-2">
+            <Button
+              twStyles=" px-7 py-4 bg-white text-secondary"
+              label="Learn more"
+              showIcon={false}
+              href="#"
+            />
+            <Button twStyles="px-7 py-4" />
           </div>
         ) : (
           <div className="md:w-[70%] flex-col md:flex-row inline md:flex md:items-center gap-2 ">
-            <div className="bg-warning-500 p-2 rounded-[0.5rem] w-full">
+            <div className="bg-warning-500 p-2 px-3.5 py-2.5 rounded-[0.5rem] w-full">
               <div className="bg-white p-2 flex items-center gap-2 mb-3 md:mb-0 rounded-[.4rem]">
                 <i className="fa-solid fa-magnifying-glass text-gray-400"></i>
                 <input
@@ -79,9 +82,12 @@ const Hero = ({
                 />
               </div>
             </div>
-            <button className="font-bold rounded-[0.5rem] my-3 py-3 px-5 bg-green-600 text-white">
-              Search
-            </button>
+            <Button
+              label="Search"
+              twStyles="px-7 py-4"
+              showIcon={false}
+              href="#"
+            />
           </div>
         )}
       </section>
