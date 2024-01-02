@@ -35,7 +35,7 @@ const WhyCredussSwiper = () => {
           <SwiperSlide key={item.id}>
             <div className="md:w-1/2">
               <h1 className="font-bold mb-3">{item.title}</h1>
-              <p className="text-justify">{item.text}</p>
+              <p className="text-justify text-desc">{item.text}</p>
             </div>
 
             <div className="md:w-1/2">

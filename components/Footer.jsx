@@ -26,7 +26,7 @@ const Footer = ({ showDownloadApp }) => {
           md:text-[3.75rem] font-bold text-secondary md:leading-[4rem]">
                 Download our app for free
               </h1>
-              <p className="md:w-[85%] mt-3 mb-3">
+              <p className="md:w-[85%] mt-3 mb-3 text-secondary">
                 Discover the convenience of Creduss wherever you go. Our Android
                 app puts the power of efficient movement and delivery in your
                 hands. Download it now to be part of the future.

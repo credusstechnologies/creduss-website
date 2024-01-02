@@ -34,7 +34,7 @@ const International = () => {
 
                 <div>
                   <h2>{i.title}</h2>
-                  <p>{i.desc}</p>
+                  <p className="text-desc">{i.desc}</p>
                 </div>
               </div>
             ))}
@@ -49,7 +49,7 @@ const International = () => {
             <h1 className="text-[1.875rem] md:text-[3.75rem] md:leading-[4.5rem] font-bold mb-5">
               How to send and receive package internationally
             </h1>
-            <p>
+            <p className="text-[#344054]">
               Our platform is designed to connect you with trusted local
               couriers who can efficiently handle your packages, ensuring they
               reach their destination securely and on time.
@@ -67,7 +67,7 @@ const International = () => {
 
                 <div className="steps-desc md:w-[95%] rounded-[1.35394rem] p-5 shadow-lg">
                   <h2 className="font-bold mb-2">{i.title}</h2>
-                  <p>{i.desc}</p>
+                  <p className="text-secondary">{i.desc}</p>
                 </div>
               </div>
             ))}

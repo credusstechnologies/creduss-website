@@ -36,7 +36,7 @@ const About = () => {
 
               <div>
                 <h2 className="font-bold p-0 m-0">{i.title}</h2>
-                <p>{i.desc}</p>
+                <p className="text-desc">{i.desc}</p>
               </div>
             </div>
           ))}

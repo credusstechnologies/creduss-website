@@ -24,7 +24,7 @@ const GetTheApp = () => {
               <h1 className="text-secondary md:text-[3.75rem] md:leading-[4.5rem] font-bold">
                 Download our app
               </h1>
-              <p>
+              <p className="text-secondary">
                 Kindly fill in your email address, open the email on your phone
                 and click on the link we sent, to download the ap from playstore
               </p>

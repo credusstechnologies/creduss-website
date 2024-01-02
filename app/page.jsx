@@ -24,7 +24,7 @@ export default function Home() {
             <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-2 text-secondary">
               We manage logistics from all over the world
             </h1>
-            <p className="">
+            <p className="text-desc">
               Have a passion for exploring new horizons? With Creduss, your
               travels can be more than just a journey – they can be an
               opportunity. Become a courier on your trips and earn.
@@ -54,7 +54,7 @@ export default function Home() {
               <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-2 text-secondary">
                 You can send and deliver anything
               </h1>
-              <p className="mt-3 mb-3">
+              <p className="mt-3 mb-3 text-desc">
                 Have a passion for exploring new horizons? With Creduss, your
                 travels can be more than just a journey – they can be an
                 opportunity. Become a courier on your trips and earn.
@@ -101,7 +101,7 @@ export default function Home() {
 
                   <div>
                     <h2 className="font-bold p-0 m-0">{i.title}</h2>
-                    <p>{i.desc}</p>
+                    <p className="text-desc">{i.desc}</p>
                   </div>
                 </div>
               ))}
@@ -133,7 +133,7 @@ export const Achievement = ({ counts, title, desc }) => {
         {counts}
       </h1>
       <h3 className="font-bold text-secondary">{title}</h3>
-      <p className="text-[#667085]">{desc}</p>
+      <p className="text-desc">{desc}</p>
     </div>
   );
 };

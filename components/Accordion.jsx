@@ -48,14 +48,16 @@ const Accordion = () => {
 
           <div className="my-5">
             <h4>Still have questions</h4>
-            <p>{"Can't find the answer you're looking for?"}</p>
+            <p className="text-desc">
+              Can't find the answer you're looking for?
+            </p>
           </div>
 
           <div className="flex items-center gap-5">
             <Button
               label="Contact us"
               href="/contact-us"
-              twStyles="px-[18px] py-2.5 bg-emerald-100 text-green-600"
+              twStyles="px-[18px] py-2.5 bg-[#CBFFE5] text-green-600"
               showIcon={false}
             />
             {pathname !== "/faq" && (
@@ -93,7 +95,7 @@ export const AccordionItem = ({ item, onItemClick, isActive }) => {
 
       {isActive && (
         <div className="w-4/5">
-          <p>{item.res}</p>
+          <p className="text-desc">{item.res}</p>
         </div>
       )}
     </div>

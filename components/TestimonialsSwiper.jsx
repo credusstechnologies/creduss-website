@@ -41,7 +41,7 @@ const TestimonialsSwiper = () => {
               </div>
 
               <div className="desc">
-                <p>{item.review}</p>
+                <p className="text-[#101828]">{item.review}</p>
                 <h3 className="mt-10 font-bold">- {item.reviewer}</h3>
               </div>
             </div>
