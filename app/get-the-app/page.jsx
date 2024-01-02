@@ -47,7 +47,7 @@ const GetTheApp = () => {
               </div>
 
               <input
-                className="bg-green-600 text-white rounded-[.5rem] px-7 py-4 text-lg font-semibold"
+                className="bg-green-600 text-white rounded-[.5rem] px-7 py-4 text-lg font-semibold cursor-pointer"
                 type="submit"
                 value="Submit"
               />

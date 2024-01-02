@@ -55,6 +55,7 @@ const Footer = ({ showDownloadApp }) => {
           </div>
           <div>
             <Button
+              isLink={false}
               label="Subscribe"
               twStyles="px-[18px] py-2.5 bg-amber-400"
               showIcon={false}

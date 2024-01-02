@@ -83,6 +83,7 @@ const Hero = ({
               </div>
             </div>
             <Button
+              isLink={false}
               label="Search"
               twStyles="px-7 py-4"
               showIcon={false}

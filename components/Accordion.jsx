@@ -54,14 +54,14 @@ const Accordion = () => {
           <div className="flex items-center gap-5">
             <Button
               label="Contact us"
-              href="#"
+              href="/contact-us"
               twStyles="px-[18px] py-2.5 bg-emerald-100 text-green-600"
               showIcon={false}
             />
             {pathname !== "/faq" && (
               <Button
                 label="Go to FAQ page"
-                href="/faq"
+                href="#"
                 twStyles="px-[18px] py-2.5 text-white"
                 showIcon={false}
               />
