@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 
 // Import Swiper styles
@@ -17,17 +17,22 @@ const TestimonialsSwiper = () => {
     <div className="testimonials-swiper text-black">
       <Swiper
         className="mySwiper"
+        centeredSlides={true}
+        initialSlide={reviewsList.length / 2}
+        // centerInsufficientSlides={false}
+        a
         modules={[Autoplay]}
-        spaceBetween={80}
-        slidesPerView={1}
+        // navigation={true}
+        spaceBetween={41}
+        slidesPerView={3}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}>
-        {reviewsList.map((item) => (
-          <SwiperSlide key={item.id} className="">
-            <div className="">
-              <div style={{ height: "40%" }}>
+        <div>
+          {reviewsList.map((item) => (
+            <SwiperSlide key={item.id} className="">
+              <div>
                 <Image
                   style={{
                     width: "100%",
@@ -40,21 +45,16 @@ const TestimonialsSwiper = () => {
                 />
               </div>
 
-              <div className="desc">
-                <p className="text-[#101828]">{item.review}</p>
-                <h3 className="mt-10 font-bold">- {item.reviewer}</h3>
+              <div className="desc text-center flex flex-col justify-between max-h-full">
+                <p className="text-[#101828] leading-relaxed">{item.review}</p>
+                <h3 className=" font-bold text-base">- {item.reviewer}</h3>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          ))}
+        </div>
 
-        <div className="custom-swiper-controls">
-          <SwiperButtonPrev>
-            <i className="fa-solid fa-chevron-left text-[#34C47C]"></i>
-          </SwiperButtonPrev>
-          <SwiperButtonNext>
-            <i className="fa-solid fa-chevron-right text-[#34C47C]"></i>
-          </SwiperButtonNext>
+        <div>
+          <SwiperButtonPrev>Prev </SwiperButtonPrev>
         </div>
       </Swiper>
     </div>
