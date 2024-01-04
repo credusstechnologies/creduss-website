@@ -23,12 +23,8 @@ const Local = () => {
 
           <div className="md:flex items-center justify-between gap-5">
             {credussForLocalList.map((i) => (
-              <div
-                key={i.id}
-                className="shadow-lg flex gap-5 rounded-[1.35394rem] p-4">
-                <div>
-                  <Image src={i.icon} alt="icon" width={100} height={100} />
-                </div>
+              <div key={i.id} className="shadow-lg flex items-start gap-5 p-5">
+                <Image src={i.icon} alt="icon" width={32} height={32} />
 
                 <div>
                   <h2>{i.title}</h2>
@@ -91,19 +87,19 @@ export const credussForLocalList = [
   },
   {
     id: "2",
-    icon: "/icons/excellence.png",
+    icon: "/icons/excellence.svg",
     title: "Reliability",
     desc: "Our network of trusted local couriers is committed to handling your items with care and professionalism.",
   },
   {
     id: "3",
-    icon: "/icons/integrity.png",
+    icon: "/icons/integrity.svg",
     title: "Real-Time Tracking",
     desc: "Our transparent tracking system keeps you informed throughout the entire delivery process, giving you peace of mind.",
   },
   {
     id: "4",
-    icon: "/icons/support.png",
+    icon: "/icons/support.svg",
     title: "Community-Centric",
     desc: "Creduss Local Operations foster connections within your community, making local deliveries more convenient and accessible.",
   },

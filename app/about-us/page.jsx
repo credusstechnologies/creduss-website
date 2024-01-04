@@ -17,22 +17,8 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 md:gap-32 gap-20">
           {ourValuesList.map((i) => (
-            <div key={i.id} className="flex gap-5 ">
-              <div
-                style={{
-                  width: "50px",
-                }}
-                className="">
-                <Image
-                  style={{
-                    width: "100%",
-                  }}
-                  src={i.icon}
-                  alt="icon"
-                  width={60}
-                  height={60}
-                />
-              </div>
+            <div key={i.id} className="flex items-start gap-5 ">
+              <Image src={i.icon} alt="icon" width={32} height={32} />
 
               <div>
                 <h2 className="font-bold p-0 m-0">{i.title}</h2>
@@ -122,19 +108,19 @@ export const ourValuesList = [
   },
   {
     id: "2",
-    icon: "/icons/excellence.png",
+    icon: "/icons/excellence.svg",
     title: "Excellence",
     desc: "When you're ready to send a package, simply log in to your Creduss account. Tell us the pick-up location, the destination, and the preferred delivery time. Our user-friendly platform ensures you can book a delivery in just a few clicks.",
   },
   {
     id: "3",
-    icon: "/icons/integrity.png",
+    icon: "/icons/integrity.svg",
     title: "Integrity",
     desc: "Get your package ready for its journey. Ensure it's securely packed and labeled. Our couriers are dedicated to delivering your items safely, so proper packaging is essential.",
   },
   {
     id: "4",
-    icon: "/icons/support.png",
+    icon: "/icons/support.svg",
     title: "Customer support",
     desc: "On the recipient's end, Creduss ensures a smooth delivery experience. Our couriers follow the designated route to deliver your package promptly and securely. You'll receive real-time updates, and once the delivery is complete, your recipient can enjoy their parcel.",
   },

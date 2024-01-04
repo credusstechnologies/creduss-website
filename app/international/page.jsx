@@ -25,12 +25,8 @@ const International = () => {
 
           <div className="md:flex items-center justify-between gap-5">
             {credussForLocalList.map((i) => (
-              <div
-                key={i.id}
-                className="shadow-lg flex gap-5 rounded-[1.35394rem] p-4">
-                <div>
-                  <Image src={i.icon} alt="icon" width={100} height={100} />
-                </div>
+              <div key={i.id} className="shadow-lg flex items-start p-5 gap-5">
+                <Image src={i.icon} alt="icon" width={32} height={32} />
 
                 <div>
                   <h2>{i.title}</h2>

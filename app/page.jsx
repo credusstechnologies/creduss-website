@@ -82,22 +82,16 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-10">
               {howCredussWork.map((i) => (
-                <div key={i.id} className="flex gap-5 ">
-                  <div
+                <div key={i.id} className="flex items-start gap-5">
+                  {/* <div
                     style={{
-                      width: "50px",
+                      width: "32px",
+                      height: "32px",
                     }}
                     className="">
-                    <Image
-                      style={{
-                        width: "100%",
-                      }}
-                      src={i.icon}
-                      alt="icon"
-                      width={60}
-                      height={60}
-                    />
-                  </div>
+
+                  </div> */}
+                  <Image src={i.icon} alt="icon" width={32} height={32} />
 
                   <div>
                     <h2 className="font-bold p-0 m-0">{i.title}</h2>
@@ -168,13 +162,13 @@ export const achievementList = [
 export const howCredussWork = [
   {
     id: "1",
-    icon: "/icons/profile-tick.png",
+    icon: "/icons/profile-tick.svg",
     title: "Sign up",
     desc: "Joining Creduss is your gateway to efficient movement and reliable package delivery. Sign up easily by creating an account. Provide some basic information, and you're ready to embark on a journey of seamless logistics.",
   },
   {
     id: "2",
-    icon: "/icons/book-delivery.png",
+    icon: "/icons/book-delivery.svg",
     title: "Book your delivery",
     desc: "When you're ready to send a package, simply log in to your Creduss account. Tell us the pick-up location, the destination, and the preferred delivery time. Our user-friendly platform ensures you can book a delivery in just a few clicks.",
   },
@@ -186,7 +180,7 @@ export const howCredussWork = [
   },
   {
     id: "4",
-    icon: "/icons/truck-tick.png",
+    icon: "/icons/truck-tick.svg",
     title: "Send & Receive",
     desc: "On the recipient's end, Creduss ensures a smooth delivery experience. Our couriers follow the designated route to deliver your package promptly and securely. You'll receive real-time updates, and once the delivery is complete, your recipient can enjoy their parcel.",
   },
