@@ -39,9 +39,9 @@ const Button = ({
 
 Button.propTypes = {
   label: PropTypes.string,
-  href: PropTypes.string.isRequired,
-  isLink: PropTypes.bool.isRequired,
-  showIcon: PropTypes.bool.isRequired,
+  href: PropTypes.string,
+  isLink: PropTypes.bool,
+  showIcon: PropTypes.bool,
   twStyles: PropTypes.string,
   onClick: PropTypes.func,
 };

@@ -2,7 +2,6 @@ import { useSwiper } from "swiper/react";
 
 const SwiperButtonPrev = ({ children }) => {
   const swiper = useSwiper();
-
   return (
     <button
       style={{ width: "40px", height: "40px" }}
