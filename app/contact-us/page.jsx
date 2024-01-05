@@ -9,7 +9,7 @@ import ContactImg from "../../public/icons/contact.png";
 const Contact = () => {
   return (
     <Layout heroBg={"/icons/contact-bg.png"}>
-      <section className="md:flex md:items-center md:justify-between gap-20 px-10 md:px-0 ">
+      <section className="md:flex md:items-center md:justify-between gap-20 px-10 md:px-0">
         <div
           className="md:w-1/2 "
           style={{
@@ -21,7 +21,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="md:w-1/2 md:pr-20">
+        <div className="md:w-1/2 md:pr-20  ">
           <form>
             <div>
               <h6 className="text-warning-400">Talk to us</h6>
@@ -95,17 +95,18 @@ const Contact = () => {
                 <label htmlFor="hear-about-us">
                   How did you hear about us?
                 </label>
-                <div className="border shadow-lg h-[50px] rounded-[0.5rem]">
-                  <select
-                    className="focus:outline-none block w-full h-full p-2"
-                    name=""
-                    id="">
-                    <option value=""></option>
-                    <option value="">Option 1</option>
-                    <option value="">Option 2</option>
-                    <option value="">Option 3</option>
-                  </select>
-                </div>
+                <select
+                  className="focus:outline-none border rounded-[0.5rem] shadow-lg block w-full h-[50px] bg-white p-2"
+                  name=""
+                  id="">
+                  <option value="">--Select an option--</option>
+                  <option value="">Option 1</option>
+                  <option value="">Option 2</option>
+                  <option value="">Option 3</option>
+                </select>
+                {/* <div className="border shadow-lg h-[50px] rounded-[0.5rem]">
+
+                </div> */}
               </div>
 
               <div className="">
@@ -157,7 +158,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="mt-10 md:px-0 px-10">
+      <section className="pt-[96px] md:px-0 px-10">
         <Accordion />
       </section>
     </Layout>

@@ -30,7 +30,7 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
 
   return (
     <nav className="px-10 py-5 md:px-20 relative bg-navBg md:flex md:items-center md:justify-between header-nav">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between ">
         {/* logo and mobNav hamburger */}
         <Link href={"/"}>
           <Image src={Logo} alt="logo" />

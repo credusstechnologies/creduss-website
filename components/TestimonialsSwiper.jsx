@@ -20,7 +20,6 @@ const TestimonialsSwiper = () => {
         centeredSlides={true}
         initialSlide={reviewsList.length / 2}
         // centerInsufficientSlides={false}
-        a
         modules={[Autoplay]}
         // navigation={true}
         spaceBetween={41}

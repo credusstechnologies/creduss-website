@@ -23,14 +23,14 @@ const MobNav = ({
   return (
     <div
       ref={ref}
-      className=" flex md:hidden flex-col absolute top-0 right-0 bg-white text-black w-[80%] h-screen">
-      <button
-        onClick={() => setShowMobNav(false)}
-        className="bg-secondary text-white text-right p-4">
-        <div className="bg-gray-600 inline-block p-1 rounded-full w-[30px] h-[30px] text-center">
+      className=" flex md:hidden flex-col absolute top-0 right-0 z-20 bg-white text-black w-[80%] h-screen">
+      <div className="bg-secondary text-white text-right h-[10vh] p-4">
+        <button
+          onClick={() => setShowMobNav(false)}
+          className="bg-gray-600 inline-block p-1 rounded-full w-[30px] h-[30px] text-center">
           <i className="fa-solid fa-close"></i>
-        </div>
-      </button>
+        </button>
+      </div>
 
       <div className="h-screen p-3 flex flex-col justify-between text-right">
         <ul className="flex flex-col gap-[1.5rem]  ">

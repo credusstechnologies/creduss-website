@@ -57,7 +57,7 @@ const Accordion = () => {
             <Button
               label="Contact us"
               href="/contact-us"
-              twStyles="px-[18px] py-2.5 bg-[#CBFFE5] text-green-600"
+              twStyles="px-[18px] py-2.5 bg-emerald-100 text-green-600"
               showIcon={false}
             />
             {pathname !== "/faq" && (
