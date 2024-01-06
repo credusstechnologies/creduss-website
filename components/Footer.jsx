@@ -14,7 +14,7 @@ const Footer = ({ showDownloadApp }) => {
   return (
     <footer>
       {showDownloadApp && (
-        <section className="our-processes py-8 bg-green-200 md:flex md:items-center md:gap-10  md:px-20 px-10">
+        <section className="our-processes py-8 bg-green-200 md:flex md:items-center md:gap-10  md:px-20 px-[15.5px]">
           <div>
             <Image src={FooterImg} alt="an image of user device" />
           </div>
@@ -37,7 +37,7 @@ const Footer = ({ showDownloadApp }) => {
         </section>
       )}
 
-      <section className="md:px-20 px-10 py-5 md:flex md:justify-between md:items-center bg-navBg text-white">
+      <section className="md:px-20 px-[15.5px] py-5 md:flex md:justify-between md:items-center bg-navBg text-white">
         <div>
           <h2 className="text-[1.25rem] ">Join our newsletter</h2>
           <p className="text-[#E9D7FE]">{`We'll send you a nice letter once per week. No spam`}</p>
@@ -64,7 +64,7 @@ const Footer = ({ showDownloadApp }) => {
         </div>
       </section>
 
-      <section className=" bg-secondary text-white md:px-20 py-10 px-10">
+      <section className=" bg-secondary text-white md:px-20 py-10 px-[15.5px]">
         <nav className="md:flex md:gap-7 md:border-b md:border-[#1D2939] md:pb-10">
           <div className="md:w-[40%] mb-7 md:mb-0">
             <Image src={Logo} alt="logo" />

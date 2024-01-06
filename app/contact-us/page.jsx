@@ -9,7 +9,7 @@ import ContactImg from "../../public/icons/contact.png";
 const Contact = () => {
   return (
     <Layout heroBg={"/icons/contact-bg.png"}>
-      <section className="md:flex md:items-center md:justify-between gap-20 px-10 md:px-0">
+      <section className="md:flex md:items-center md:justify-between gap-20 px-[15.5px] md:px-0">
         <div
           className="md:w-1/2 "
           style={{

@@ -8,9 +8,9 @@ const CustomerStories = () => {
       heroBg={"/icons/stories-bg.png"}
       showSearchField={true}
       textContent={{
-        subHeader: "TRAVELING AND EARNING STORIES",
-        subHeaderFs: "4.25rem",
-        specialWord: "STORIES",
+        mainCaption: "traveling and earning stories",
+        subCaption: "",
+        specialWord: "stories",
         desc: "Subscribe to learn about new product features, the latest in technology, solutions, and updates.",
       }}>
       <ComingSoon />

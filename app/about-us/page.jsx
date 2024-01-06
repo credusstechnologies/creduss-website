@@ -10,7 +10,7 @@ import Accordion from "@/components/Accordion";
 const About = () => {
   return (
     <Layout heroBg={"/icons/about-bg.png"}>
-      <section className="py-10 px-10 md:px-20">
+      <section className="py-10 px-[15.5px] md:px-20">
         <h1 className="md:text-[3.75rem] font-[700] text-center mb-5 text-secondary">
           Our Values
         </h1>
@@ -29,7 +29,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="md:flex md:items-center md:justify-between gap-20 bg-green-100 px-10 md:px-0 py-10 md:py-0">
+      <section className="md:flex md:items-center md:justify-between gap-20 bg-green-100 px-[15.5px] md:px-0 py-10 md:py-0">
         <div
           className="md:w-1/2"
           style={{
@@ -61,7 +61,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="md:flex md:items-center md:flex-row-reverse md:justify-between gap-20 px-10 md:px-0 pl-10 md:pl-20 mt-7 md:mt-0">
+      <section className="md:flex md:items-center md:flex-row-reverse md:justify-between gap-20 px-[15.5px] md:px-0 pl-10 md:pl-20 mt-7 md:mt-0">
         <div className="md:w-1/2">
           <div>
             <Image src={AboutImg2} alt="woman traveling" />

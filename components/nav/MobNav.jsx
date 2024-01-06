@@ -34,7 +34,7 @@ const MobNav = ({
       </div>
 
       <div className="h-screen p-3 flex flex-col justify-between text-right  ">
-        <ul className=" ">
+        <ul className=" flex flex-col gap-[24px]">
           {/* active sub mob nav */}
           <li
             className={`font-bold flex items-center gap-2 justify-end `}
@@ -50,11 +50,10 @@ const MobNav = ({
           </li>
           {/* sub nav specific */}
           {showSubNav && (
-            <nav className="block md:hidden mb-2 text-slate-600 text-lg font-normal leading-7">
-              <div className="">
-                {subNavList.resources.map((res) => (
+            <nav className=" block md:hidden text-slate-600 text-lg font-normal leading-7">
+              <div className="flex flex-col gap-[16px]">
+                {subMobList.map((res) => (
                   <li
-                    className={`mt-[1.5rem]`}
                     key={res.id}
                     onClick={() => {
                       dispatch(setActiveSubNav(res.text));
@@ -70,24 +69,10 @@ const MobNav = ({
                   </li>
                 ))}
               </div>
-
-              <div>
-                {subNavList.company.map((com) => (
-                  <li
-                    className="mt-[1.5rem]"
-                    key={com.id}
-                    onClick={() => {
-                      dispatch(setActiveSubNav(com.text));
-                      setShowMobNav(false);
-                    }}>
-                    <Link href={com.path}>{com.text}</Link>
-                  </li>
-                ))}
-              </div>
             </nav>
           )}
 
-          <div className="flex flex-col gap-[24px] mt-3">
+          <div className="flex flex-col gap-[24px] ">
             {mainNavList.map((nav) => (
               <li key={nav.id} className="font-bold ">
                 <Link
@@ -101,17 +86,55 @@ const MobNav = ({
               </li>
             ))}
           </div>
-        </ul>
 
-        <div className="flex justify-end">
-          <Button
-            twStyles="px-[18px] py-2.5 text-white"
-            onClick={() => setShowMobNav(false)}
-          />
-        </div>
+          <div className="flex justify-end">
+            <Button
+              twStyles="px-[18px] py-2.5 text-white"
+              onClick={() => setShowMobNav(false)}
+            />
+          </div>
+        </ul>
       </div>
     </div>
   );
 };
 
 export default MobNav;
+
+export const subMobList = [
+  {
+    id: "1",
+    text: "Blog",
+    path: "/blog",
+  },
+  {
+    id: "2",
+    text: "Customer stories",
+    path: "/customer-stories",
+  },
+  {
+    id: "3",
+    text: "Video tutorials",
+    path: "/video-tutorials",
+  },
+  {
+    id: "4",
+    text: "About us",
+    path: "/about-us",
+  },
+  {
+    id: "5",
+    text: "Contact us",
+    path: "/contact-us",
+  },
+  {
+    id: "3",
+    text: "FAQ",
+    path: "/faq",
+  },
+  // featured: {
+  //   img: "",
+  //   title: "Success story",
+  //   desc: "Learn about Lizzy Dahunsi's success story after using our app",
+  // },
+];

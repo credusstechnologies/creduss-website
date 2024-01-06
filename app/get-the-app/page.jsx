@@ -19,7 +19,7 @@ const GetTheApp = () => {
               <Image src={MobileApp} alt="mobile app view" />
             </div>
 
-            <div className="px-10 md:px-0 md:scale-y-[0.9]">
+            <div className="px-[15.5px] md:px-0 md:scale-y-[0.9]">
               <div>
                 <h6 className="text-warning-500">GET STARTED</h6>
                 <h1 className="text-secondary md:text-[3.75rem] md:leading-[4.5rem] font-bold">

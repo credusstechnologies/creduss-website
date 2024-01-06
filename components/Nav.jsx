@@ -29,7 +29,7 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
   const pathname = usePathname();
 
   return (
-    <nav className="px-10 py-5 md:px-20 relative bg-navBg md:flex gap-7 md:items-center md:justify-between header-nav">
+    <nav className="px-[15.5px] py-5 md:px-20 relative bg-navBg md:flex gap-7 md:items-center md:justify-between header-nav">
       <div className="flex items-center justify-between ">
         {/* logo and mobNav hamburger */}
         <Link href={"/"}>
@@ -97,7 +97,7 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
       {showSubNav && (
         <nav
           ref={ref}
-          className="absolute w-full left-0 hidden md:flex px-10 py-5 bg-white text-black  justify-between gap-5 ">
+          className="absolute w-full left-0 hidden md:flex px-[15.5px] py-5 bg-white text-black  justify-between gap-5 ">
           <div>
             <h6 className="text-warning-500">Resources</h6>
             {subNavList.resources.map((res) => (

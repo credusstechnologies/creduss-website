@@ -19,7 +19,7 @@ export default function Home() {
       }>
       <main className="home">
         <section className=" md:pt-15 pt-10 ">
-          <section className="md:px-20 px-10 md:w-[60%] md:pr-1">
+          <section className="md:px-20 px-[15.5px] md:w-[60%] md:pr-1">
             <h6 className="text-warning-400">Our Achievements</h6>
             <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-2 text-secondary">
               We manage logistics from all over the world
@@ -31,7 +31,7 @@ export default function Home() {
             </p>
           </section>
 
-          <section className="md:px-20 px-10 md:flex md:items-center md:justify-between mt-5">
+          <section className="md:px-20 px-[15.5px] md:flex md:items-center md:justify-between mt-5">
             <div className="grid grid-cols-2 gap-y-4 gap-x-2 md:w-[50%]">
               {achievementList.map((achievement) => (
                 <Achievement
@@ -48,7 +48,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="md:px-20 px-10 py-10 flex flex-col-reverse md:items-center md:flex-row md:justify-between bg-[#f0f9ff">
+          <section className="md:px-20 px-[15.5px] py-10 flex flex-col-reverse md:items-center md:flex-row md:justify-between bg-[#f0f9ff">
             <div className="md:w-[45%] mt-4 md:mt-0">
               <h6 className="text-warning-400">Unique features</h6>
               <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-2 text-secondary">
@@ -75,7 +75,7 @@ export default function Home() {
             <WhyCredussSwiper />
           </section>
 
-          <section className="py-10 px-10 md:px-20">
+          <section className="py-10 px-[15.5px] md:px-20">
             <h1 className="md:text-[3.75rem] font-[700] text-center mb-5 text-secondary">
               How Creduss Works
             </h1>

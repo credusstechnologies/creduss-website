@@ -3,39 +3,28 @@ import Layout from "@/components/Layout";
 import React from "react";
 import Image from "next/image";
 import Accordion from "@/components/Accordion";
+import WhyCredussCards from "@/components/WhyCredussCards";
 
 const Local = () => {
   return (
     <Layout
       heroBg={"/icons/local-bg.png"}
       textContent={{
-        mainHeader: "SENDING & RECEIVING",
-        mainHeaderFs: "72px",
-        subHeader: "PACKAGES LOCALLY",
-        specialWord: "PACKAGES",
+        mainCaption: "SENDING & RECEIVING",
+        subCaption: "packages locally",
+        specialWord: "packages",
         desc: "Welcome to Creduss Local Operations, where we make sending and receiving packages in your community effortless and efficient. Discover how our platform works seamlessly to connect you with trusted couriers and ensure your packages reach their destination safely.",
       }}>
       <main>
-        <section className="px-10 md:px-20 py-10">
-          <h1 className="text-secondary text-[2.25rem] text-center md:leading-[4.5rem] font-bold">
+        <section className="px-[15.5px] md:px-20 py-10">
+          <h1 className="hidden md:block text-secondary text-[2.25rem] text-center md:leading-[4.5rem] font-bold">
             Why Choose Creduss for Local Deliveries
           </h1>
 
-          <div className="md:flex items-center justify-between gap-5">
-            {credussForLocalList.map((i) => (
-              <div key={i.id} className="shadow-lg flex items-start gap-5 p-5">
-                <Image src={i.icon} alt="icon" width={32} height={32} />
-
-                <div>
-                  <h2>{i.title}</h2>
-                  <p className="text-desc">{i.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <WhyCredussCards />
         </section>
 
-        <section className="px-10 md:px-20 py-10 text-white local-steps">
+        <section className="px-[15.5px] md:px-20 py-10 text-white local-steps">
           <div className="w-[80%] mb-5">
             <h6 className="text-warning-400">
               Simplify Local Deliveries with Creduss
@@ -77,33 +66,6 @@ const Local = () => {
 };
 
 export default Local;
-
-export const credussForLocalList = [
-  {
-    id: "1",
-    icon: "/icons/safety.svg",
-    title: "Efficiency",
-    desc: "We prioritize timely deliveries to ensure your packages reach their destination when you expect them.",
-  },
-  {
-    id: "2",
-    icon: "/icons/excellence.svg",
-    title: "Reliability",
-    desc: "Our network of trusted local couriers is committed to handling your items with care and professionalism.",
-  },
-  {
-    id: "3",
-    icon: "/icons/integrity.svg",
-    title: "Real-Time Tracking",
-    desc: "Our transparent tracking system keeps you informed throughout the entire delivery process, giving you peace of mind.",
-  },
-  {
-    id: "4",
-    icon: "/icons/support.svg",
-    title: "Community-Centric",
-    desc: "Creduss Local Operations foster connections within your community, making local deliveries more convenient and accessible.",
-  },
-];
 
 export const sendReceiveLocally = [
   {
