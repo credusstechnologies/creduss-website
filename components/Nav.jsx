@@ -5,6 +5,7 @@ import Link from "next/link";
 import { mainNav, subNav } from "@/app/layout";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 
 import Logo from "../public/icons/logo.png";
@@ -16,7 +17,7 @@ import {
   setActiveSubNav,
   setShowSubNav,
 } from "@/redux/features/global/globalSlice";
-import GetAppBtn from "./GetAppBtn";
+import Button from "./Button";
 import MobNav from "./nav/MobNav";
 
 const Nav = ({ showSubNav, setShowSubNav }) => {
@@ -25,10 +26,11 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
   const { activeSubNav } = useSelector((state) => state.global);
   const [showMobNav, setShowMobNav] = useState(false);
 
-  useEffect(() => {});
+  const pathname = usePathname();
+
   return (
-    <nav className="px-10 py-5 md:px-20 relative bg-navBg md:flex md:items-center md:justify-between">
-      <div className="flex items-center justify-between">
+    <nav className="px-10 py-5 md:px-20 relative bg-navBg md:flex gap-7 md:items-center md:justify-between header-nav">
+      <div className="flex items-center justify-between ">
         {/* logo and mobNav hamburger */}
         <Link href={"/"}>
           <Image src={Logo} alt="logo" />
@@ -41,27 +43,31 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
         </button>
       </div>
 
-      <ul className="hidden md:flex md:gap-4 md:items-center md:justify-between">
+      <ul className="hidden md:flex md:gap-[32px] md:items-center md:justify-between">
         {/* desktop only nav items */}
         <li
-          className="cursor-pointer"
+          className={`${
+            pathname === activeSubNav?.path ? "active-link" : ""
+          } cursor-pointer`}
           onClick={() => setShowSubNav(!showSubNav)}>
           <i
             className={`fa-solid fa-chevron-${
               showSubNav ? "up" : "down"
             }`}></i>{" "}
-          {activeSubNav?.text}
+          {activeSubNav?.text || "Contact us"}
         </li>
 
         {mainNavList.map((nav) => (
-          <li key={nav.id}>
+          <li
+            className={pathname === nav.path ? "active-link" : ""}
+            key={nav.id}>
             <Link href={nav.path}>{nav.text}</Link>
           </li>
         ))}
       </ul>
 
       <div className="md:block hidden">
-        <GetAppBtn setShowMobNav={setShowMobNav} />
+        <Button twStyles="px-[18px] py-2.5" />
       </div>
 
       {/* mobile nav specific */}
@@ -72,6 +78,7 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
           activeSubNav={activeSubNav}
           setShowMobNav={setShowMobNav}
           setShowSubNav={setShowSubNav}
+          pathname={pathname}
         />
       )}
     </nav>
@@ -96,7 +103,7 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
             {subNavList.resources.map((res) => (
               <Link
                 onClick={() => {
-                  dispatch(setActiveSubNav(res));
+                  dispatch(setActiveSubNav(res.path));
                   setShowSubNav(false);
                 }}
                 className="mt-[1.5rem] flex gap-3 items-center"
@@ -116,7 +123,7 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
             {subNavList.company.map((com) => (
               <Link
                 onClick={() => {
-                  dispatch(setActiveSubNav(com));
+                  dispatch(setActiveSubNav(com.path));
                   setShowSubNav(false);
                 }}
                 className="mt-[1.5rem] flex gap-3 items-center"

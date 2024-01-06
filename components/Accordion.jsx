@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Button from "./Button";
 
 const Accordion = () => {
   // state holds the ID of active accordion item
   const [activeItemId, setActiveItemId] = useState(null);
+
+  const pathname = usePathname();
 
   // fxn that checks if the ID of clicked accordion item has already been clicked and set as activeItemId
   // fxn takes in the ID of clicked accordion item
@@ -17,7 +20,7 @@ const Accordion = () => {
   };
 
   return (
-    <div className="accordion md:w-3/5 m-auto">
+    <div className="accordion px-10 md:px-20 md:w-3/5 m-auto">
       <div className="mb-5 text-center">
         <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-10 mt-5 text-secondary md:w-[80%] m-auto">
           Frequently asked questions
@@ -34,7 +37,7 @@ const Accordion = () => {
         />
       ))}
 
-      <div className="bg-green-100 flex items-center justify-center py-10 text-center my-10">
+      <div className="bg-slate-50 flex items-center justify-center py-10 text-center my-10">
         <div className="flex items-center justify-center flex-col">
           <Image
             src="/icons/avatar-group.png"
@@ -45,20 +48,26 @@ const Accordion = () => {
 
           <div className="my-5">
             <h4>Still have questions</h4>
-            <p>{"Can't find the answer you're looking for?"}</p>
+            <p className="text-desc">
+              Can't find the answer you're looking for?
+            </p>
           </div>
 
           <div className="flex items-center gap-5">
-            <Link href="/contact-us">
-              <button className="bg-green-50 text-green-700 rounded-[0.5rem] py-3 px-5">
-                Contact
-              </button>
-            </Link>
-            <Link href="/faq">
-              <button className="bg-green-600 text-white rounded-[0.5rem] py-3 px-5 ">
-                Go to FAQ page
-              </button>
-            </Link>
+            <Button
+              label="Contact us"
+              href="/contact-us"
+              twStyles="px-[18px] py-2.5 bg-emerald-100 text-green-600"
+              showIcon={false}
+            />
+            {pathname !== "/faq" && (
+              <Button
+                label="Go to FAQ page"
+                href="#"
+                twStyles="px-[18px] py-2.5 text-white"
+                showIcon={false}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -86,7 +95,7 @@ export const AccordionItem = ({ item, onItemClick, isActive }) => {
 
       {isActive && (
         <div className="w-4/5">
-          <p>{item.res}</p>
+          <p className="text-desc">{item.res}</p>
         </div>
       )}
     </div>

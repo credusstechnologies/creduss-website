@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 
 // Import Swiper styles
@@ -13,21 +13,47 @@ import SwiperButtonNext from "./SwiperButtonNext";
 import SwiperButtonPrev from "./SwiperButtonPrev";
 
 const TestimonialsSwiper = () => {
+  const breakpoint = {
+    // when window width is >= 320px
+    // 320: {
+    //   slidesPerView: 2,
+    //   spaceBetween: 20,
+    // },
+    // // when window width is >= 480px
+    // 480: {
+    //   slidesPerView: 3,
+    //   spaceBetween: 30,
+    // },
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 2,
+      // spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  };
+
   return (
     <div className="testimonials-swiper text-black">
       <Swiper
         className="mySwiper"
+        breakpoints={breakpoint}
+        centeredSlides={true}
+        initialSlide={reviewsList.length / 2}
+        // centerInsufficientSlides={false}
         modules={[Autoplay]}
-        spaceBetween={80}
-        slidesPerView={1}
+        // navigation={true}
+        spaceBetween={41}
+        // slidesPerView={3}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}>
-        {reviewsList.map((item) => (
-          <SwiperSlide key={item.id} className="">
-            <div className="">
-              <div style={{ height: "40%" }}>
+        <div>
+          {reviewsList.map((item) => (
+            <SwiperSlide key={item.id} className="">
+              <div>
                 <Image
                   style={{
                     width: "100%",
@@ -40,22 +66,18 @@ const TestimonialsSwiper = () => {
                 />
               </div>
 
-              <div className="desc">
-                <p>{item.review}</p>
-                <h3 className="mt-10 font-bold">- {item.reviewer}</h3>
+              <div className="desc text-center flex flex-col justify-between pt-[20px]">
+                <p className="text-[#101828] leading-relaxed">{item.review}</p>
+                <h3 className=" font-bold text-base">- {item.reviewer}</h3>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-
-        <div className="custom-swiper-controls">
-          <SwiperButtonPrev>
-            <i className="fa-solid fa-chevron-left text-[#34C47C]"></i>
-          </SwiperButtonPrev>
-          <SwiperButtonNext>
-            <i className="fa-solid fa-chevron-right text-[#34C47C]"></i>
-          </SwiperButtonNext>
+            </SwiperSlide>
+          ))}
         </div>
+
+        {/* TODO: create custom swiper nav */}
+        {/* <div>
+          <SwiperButtonPrev>Prev </SwiperButtonPrev>
+        </div> */}
       </Swiper>
     </div>
   );
