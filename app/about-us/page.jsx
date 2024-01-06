@@ -1,5 +1,5 @@
 "use client";
-import GetAppBtn from "@/components/GetAppBtn";
+import Button from "@/components/Button";
 import Layout from "@/components/Layout";
 import Image from "next/image";
 
@@ -17,33 +17,19 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 md:gap-32 gap-20">
           {ourValuesList.map((i) => (
-            <div key={i.id} className="flex gap-5 ">
-              <div
-                style={{
-                  width: "50px",
-                }}
-                className="">
-                <Image
-                  style={{
-                    width: "100%",
-                  }}
-                  src={i.icon}
-                  alt="icon"
-                  width={60}
-                  height={60}
-                />
-              </div>
+            <div key={i.id} className="flex items-start gap-5 ">
+              <Image src={i.icon} alt="icon" width={32} height={32} />
 
               <div>
                 <h2 className="font-bold p-0 m-0">{i.title}</h2>
-                <p>{i.desc}</p>
+                <p className="text-desc">{i.desc}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="md:flex md:items-center md:justify-between gap-20 bg-green-100 px-10 md:px-0">
+      <section className="md:flex md:items-center md:justify-between gap-20 bg-green-100 px-10 md:px-0 py-10 md:py-0">
         <div
           className="md:w-1/2"
           style={{
@@ -58,10 +44,10 @@ const About = () => {
         <div className="md:w-1/2 md:p-20 ">
           <div className=" ">
             <h6 className="text-warning-400">Who we are</h6>
-            <h1 className="text-secondary text-[3.75rem] md:leading-[4.5rem] font-bold">
+            <h1 className="text-secondary text-3xl md:text-[3.75rem] md:leading-[4.5rem] font-bold">
               Global online logistics and courier
             </h1>
-            <p className="text-[0.875rem] leading-[1.25rem] mb-4">
+            <p className="md:text-[0.875rem] leading-[1.25rem] mb-4 text-slate-800 text-xs font-normal">
               Creduss is a global online logistics and courier marketplace that
               is headquartered in Tallinn and Lagos. Creduss is a platform that
               connects travellers with free baggage space to parcel going to
@@ -70,19 +56,25 @@ const About = () => {
               to anywhere in the world faster and cheaper. They can also use the
               platform to earn while they are travelling.
             </p>
-            <GetAppBtn />
+            <Button twStyles="px-7 py-4 text-white" />
           </div>
         </div>
       </section>
 
-      <section className="md:flex md:items-center flex-col-reverse md:flex-row md:justify-between gap-20 px-10 md:px-0 pl-10 md:pl-20">
+      <section className="md:flex md:items-center md:flex-row-reverse md:justify-between gap-20 px-10 md:px-0 pl-10 md:pl-20 mt-7 md:mt-0">
+        <div className="md:w-1/2">
+          <div>
+            <Image src={AboutImg2} alt="woman traveling" />
+          </div>
+        </div>
+
         <div className="md:w-1/2   md:p-20 ">
           <div className="  ">
             <h6 className="text-warning-400">What we do</h6>
-            <h1 className="text-secondary text-[3.75rem] md:leading-[4.5rem] font-bold">
+            <h1 className="text-secondary text-3xl md:text-[3.75rem] md:leading-[4.5rem] font-bold">
               Enabling sales through on-time delivery
             </h1>
-            <p className="text-[0.875rem] leading-[1.25rem] mb-4">
+            <p className="md:text-[0.875rem] leading-[1.25rem] mb-4 text-slate-800 text-xs font-normal">
               We are the oil that enables the engine of the global economy to
               keep running. With all businesses now online there needs to be a
               cheaper and faster way to deliver to their customers on time. This
@@ -93,18 +85,12 @@ const About = () => {
               time. Buy online, ship with creduss, contract an associate going
               to the destination of your orders, receive your parcel on arrival.
             </p>
-            <GetAppBtn />
-          </div>
-        </div>
-
-        <div className="md:w-1/2">
-          <div>
-            <Image src={AboutImg2} alt="woman traveling" />
+            <Button twStyles="px-7 py-4 text-white" />
           </div>
         </div>
       </section>
 
-      <section className="my-10 px-10 md:px-20">
+      <section className="my-10">
         <Accordion />
       </section>
     </Layout>
@@ -122,19 +108,19 @@ export const ourValuesList = [
   },
   {
     id: "2",
-    icon: "/icons/excellence.png",
+    icon: "/icons/excellence.svg",
     title: "Excellence",
     desc: "When you're ready to send a package, simply log in to your Creduss account. Tell us the pick-up location, the destination, and the preferred delivery time. Our user-friendly platform ensures you can book a delivery in just a few clicks.",
   },
   {
     id: "3",
-    icon: "/icons/integrity.png",
+    icon: "/icons/integrity.svg",
     title: "Integrity",
     desc: "Get your package ready for its journey. Ensure it's securely packed and labeled. Our couriers are dedicated to delivering your items safely, so proper packaging is essential.",
   },
   {
     id: "4",
-    icon: "/icons/support.png",
+    icon: "/icons/support.svg",
     title: "Customer support",
     desc: "On the recipient's end, Creduss ensures a smooth delivery experience. Our couriers follow the designated route to deliver your package promptly and securely. You'll receive real-time updates, and once the delivery is complete, your recipient can enjoy their parcel.",
   },

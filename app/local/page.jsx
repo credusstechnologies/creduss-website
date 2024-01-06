@@ -23,16 +23,12 @@ const Local = () => {
 
           <div className="md:flex items-center justify-between gap-5">
             {credussForLocalList.map((i) => (
-              <div
-                key={i.id}
-                className="shadow-lg flex gap-5 rounded-[1.35394rem] p-4">
-                <div>
-                  <Image src={i.icon} alt="icon" width={100} height={100} />
-                </div>
+              <div key={i.id} className="shadow-lg flex items-start gap-5 p-5">
+                <Image src={i.icon} alt="icon" width={32} height={32} />
 
                 <div>
                   <h2>{i.title}</h2>
-                  <p>{i.desc}</p>
+                  <p className="text-desc">{i.desc}</p>
                 </div>
               </div>
             ))}
@@ -47,7 +43,7 @@ const Local = () => {
             <h1 className="text-[1.875rem] md:text-[3.75rem] md:leading-[4.5rem] font-bold mb-5">
               How to send and receive package locally
             </h1>
-            <p>
+            <p className="text-[#F2F4F7]">
               Our platform is designed to connect you with trusted local
               couriers who can efficiently handle your packages, ensuring they
               reach their destination securely and on time.
@@ -65,14 +61,14 @@ const Local = () => {
 
                 <div className="steps-desc md:w-[95%] rounded-[1.35394rem] p-5 text-black">
                   <h2 className="font-bold mb-2">{i.title}</h2>
-                  <p>{i.desc}</p>
+                  <p className="text-secondary">{i.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="px-10 md:px-20 py-10">
+        <section className="py-10">
           <Accordion />
         </section>
       </main>
@@ -91,19 +87,19 @@ export const credussForLocalList = [
   },
   {
     id: "2",
-    icon: "/icons/excellence.png",
+    icon: "/icons/excellence.svg",
     title: "Reliability",
     desc: "Our network of trusted local couriers is committed to handling your items with care and professionalism.",
   },
   {
     id: "3",
-    icon: "/icons/integrity.png",
+    icon: "/icons/integrity.svg",
     title: "Real-Time Tracking",
     desc: "Our transparent tracking system keeps you informed throughout the entire delivery process, giving you peace of mind.",
   },
   {
     id: "4",
-    icon: "/icons/support.png",
+    icon: "/icons/support.svg",
     title: "Community-Centric",
     desc: "Creduss Local Operations foster connections within your community, making local deliveries more convenient and accessible.",
   },

@@ -962,6 +962,7 @@ autoprefixer@latest:
     eslint-config-next: latest
     next: latest
     postcss: latest
+    prop-types: ^15.8.1
     react: latest
     react-dom: latest
     react-redux: ^8.1.2

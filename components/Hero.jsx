@@ -3,73 +3,68 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 import HeroImg from "../public/icons/hero-img.png";
-import GetAppBtn from "./GetAppBtn";
+import Button from "./Button";
 
 const Hero = ({
+  contents,
   heroBg,
   bgPosition,
   bgSize,
   linearGradient,
   showHeroImg,
   showSearchField,
-  textContents,
 }) => {
   return (
-    <div
+    <section
       style={{
         background: `${linearGradient}, url(${heroBg}) no-repeat ${bgPosition}/${bgSize}`,
       }}
-      className={`hero relative overflow-hidden md:px-20 px-10 bg-secondary md:flex md:items-center`}>
-      <section className="lg:max-w-[798px] ">
-        {/* <div className="md:block font-bold md:leading-[5rem] ">
-          <h1 className=" md:text-[5.625rem] ">TRANSFORMING</h1>
-          <h1 className="md:text-[2.6875rem] mt-0">
-            MOVEMENT & <span className="text-warning-500">PACKAGE</span> DELIVERY
-          </h1>
-        </div> */}
-
-        <div className="font-bold md:leading-[5rem]">
-          <h1
-            className={`text-[4.5rem] break-words ${
-              textContents.mainHeaderFs
-                ? `text-[${textContents.mainHeaderFs}]`
-                : "md:text-[5.625rem] "
-            }`}>
-            {textContents.mainHeader}
-          </h1>
-          <h1
-            className={`${
-              textContents.subHeaderFs
-                ? `text-[${textContents.subHeaderFs}]`
-                : "md:text-[2.6875rem]"
-            } text-[1.875rem] mt-0`}>
-            {textContents.subHeader.split(" ").map((item, i) =>
-              item === textContents.specialWord ? (
-                <span className="text-warning-400" key={i}>
-                  {item + " "}
-                </span>
-              ) : (
-                <span key={i}>{item + " "}</span>
-              )
-            )}
-          </h1>
+      className={`hero flex items-center h-screen relative md:px-20 px-10 pt-32`}>
+      <section className=" md:max-w-[740px] w-full ">
+        <div className="text-white ">
+          <h2 className={`text-[43px] uppercase `}>
+            {contents?.caption?.split(" ").map((item, i) => {
+              if (item.match(contents.h1)) {
+                return (
+                  <span
+                    key={i}
+                    className="block text-[40px] md:text-[90px] font-bold leading-[90px] ">
+                    {item + " "}
+                  </span>
+                );
+              } else if (item === contents.uniqueWord) {
+                return (
+                  <span key={i} className="text-warning-400">
+                    {item + " "}
+                    {console.log(item)}
+                  </span>
+                );
+              } else {
+                return item + " ";
+              }
+            })}
+          </h2>
         </div>
+
         <div
           className={`${
             showHeroImg ? "bg-warning-500 p-6" : ""
-          } rounded-2xl mt-3 mb-3`}>
-          <p className="md:w-[80%]">{textContents.desc}</p>
+          } rounded-2xl text-white my-3`}>
+          <p className="md:w-[80%]">{contents?.desc}</p>
         </div>
         {!showSearchField ? (
-          <div className="flex-col md:flex-row inline md:flex md:items-center gap-2">
-            <button className="rounded-[0.5rem] my-3 py-3 px-2 bg-white text-secondary">
-              learn more
-            </button>
-            <GetAppBtn />
+          <div className=" flex-col md:flex-row inline md:flex md:items-center gap-2">
+            <Button
+              twStyles="px-5 py-3 md:px-7 md:py-4 bg-white text-secondary"
+              label="Learn more"
+              showIcon={false}
+              href="#"
+            />
+            <Button twStyles="px-5 py-3 md:px-7 md:py-4 mt-4 md:mt-0 text-white" />
           </div>
         ) : (
           <div className="md:w-[70%] flex-col md:flex-row inline md:flex md:items-center gap-2 ">
-            <div className="bg-warning-500 p-2 rounded-[0.5rem] w-full">
+            <div className="bg-warning-500 p-2 px-3.5 py-2.5 rounded-[0.5rem] w-full">
               <div className="bg-white p-2 flex items-center gap-2 mb-3 md:mb-0 rounded-[.4rem]">
                 <i className="fa-solid fa-magnifying-glass text-gray-400"></i>
                 <input
@@ -79,19 +74,23 @@ const Hero = ({
                 />
               </div>
             </div>
-            <button className="font-bold rounded-[0.5rem] my-3 py-3 px-5 bg-green-600 text-white">
-              Search
-            </button>
+            <Button
+              isLink={false}
+              label="Search"
+              twStyles="px-7 py-4 text-white"
+              showIcon={false}
+              href="#"
+            />
           </div>
         )}
       </section>
 
-      <div className=" hero-img-wrapper hidden md:block">
+      {/* <div className=" hero-img-wrapper hidden md:block">
         {showHeroImg && (
           <Image className="hero-img " src={HeroImg} alt="hero img" />
         )}
-      </div>
-    </div>
+      </div> */}
+    </section>
   );
 };
 
