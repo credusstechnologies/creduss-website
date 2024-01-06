@@ -78,6 +78,7 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
           activeSubNav={activeSubNav}
           setShowMobNav={setShowMobNav}
           setShowSubNav={setShowSubNav}
+          pathname={pathname}
         />
       )}
     </nav>
@@ -102,7 +103,7 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
             {subNavList.resources.map((res) => (
               <Link
                 onClick={() => {
-                  dispatch(setActiveSubNav(res));
+                  dispatch(setActiveSubNav(res.path));
                   setShowSubNav(false);
                 }}
                 className="mt-[1.5rem] flex gap-3 items-center"
@@ -122,7 +123,7 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
             {subNavList.company.map((com) => (
               <Link
                 onClick={() => {
-                  dispatch(setActiveSubNav(com));
+                  dispatch(setActiveSubNav(com.path));
                   setShowSubNav(false);
                 }}
                 className="mt-[1.5rem] flex gap-3 items-center"

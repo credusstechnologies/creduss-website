@@ -3,48 +3,77 @@ html {
   scroll-behavior: smooth;
 }
 
-  .header {
+.header {
   &-nav {
     ul > li {
       position: relative;
+      // display: inline;
+      // background: gray;
+      // width: 50%;
 
-      // background: green;
+      @media screen and (min-width: 768px) {
+        &.active-link::after,
+        &::after {
+          content: "";
+          display: block;
+          height: 2px;
+          width: 29px;
+          border-radius: 100px;
+          background: #fdb022;
 
-      &.active-link::after,
-      &::after {
-        content: "";
-        display: block;
-        height: 2px;
-        width: 29px;
-        border-radius: 100px;
-        background: #fdb022;
+          position: absolute;
+          bottom: -2px;
+          // right: 0;
+          // right: 0;
 
-        position: absolute;
-        bottom: -2px;
+          transform-origin: bottom left;
+          transition: transform 0.3s ease;
+        }
 
-        transform-origin: bottom left;
-        transition: transform 0.3s ease;
-      }
+        &.active-link {
+          position: relative;
+          // background: red;
 
-      &.active-link {
-        position: relative;
-        // background: red;
+          &::after {
+            transform: scaleX(1);
+          }
+        }
 
         &::after {
+          transform: scaleX(0);
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
+
+        &.active-link {
           transform: scaleX(1);
         }
       }
+    }
+  }
+
+  .mob-link {
+    position: relative;
+
+    &.active-link {
+      transform-origin: bottom right;
+      transition: transform 0.3s ease;
 
       &::after {
-        transform: scaleX(0);
-      }
+        content: "";
+        width: 50%;
+        height: 2px;
+        display: block;
+        background-color: #fdb022;
 
-      &:hover::after {
-        transform: scaleX(1);
-      }
+        position: absolute;
+        right: 0;
+        bottom: -5px;
 
-      &.active-link {
-        transform: scaleX(1);
+        // transform: scaleX(0);
+        //TODO: apply similar desktop active-link effect to mobile
       }
     }
   }
