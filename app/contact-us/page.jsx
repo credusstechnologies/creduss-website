@@ -21,21 +21,24 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="md:w-1/2 md:pr-20  ">
+        <div className="md:w-1/2 md:pr-20 mt-7 ">
           <form>
             <div>
               <h6 className="text-warning-400">Talk to us</h6>
-              <h1 className="text-secondary text-[3.75rem] md:leading-[4.5rem] font-bold">
+              <h1 className="text-secondary md:text-[3.75rem] md:leading-[4.5rem] text-3xl font-bold">
                 Get in Touch
               </h1>
+              <p className="text-slate-700 text-sm md:text-lg font-normal">
+                Here are some of the most common frequently asked questions
+              </p>
             </div>
 
-            <div className="flex flex-col gap-3 mt-3">
+            <div className="flex flex-col gap-7 mt-3">
               <div className="">
                 <label htmlFor="name">
                   Name
                   <sup>
-                    <i className="fa-solid fa-asterisk text-red-500"></i>
+                    <i className="fa-solid text-[7px] fa-asterisk text-red-500"></i>
                   </sup>
                 </label>
                 <div className="border shadow-lg flex gap-5 items-center h-[50px] px-5 rounded-[0.5rem]">
@@ -55,7 +58,7 @@ const Contact = () => {
                 <label htmlFor="email">
                   Email
                   <sup>
-                    <i className="fa-solid fa-asterisk text-red-500"></i>
+                    <i className="fa-solid text-[7px] fa-asterisk text-red-500"></i>
                   </sup>
                 </label>
                 <div className="border shadow-lg flex gap-5 items-center h-[50px] px-5 rounded-[0.5rem]">
@@ -75,7 +78,7 @@ const Contact = () => {
                 <label htmlFor="phone">
                   Phone number
                   <sup>
-                    <i className="fa-solid fa-asterisk text-red-500"></i>
+                    <i className="fa-solid text-[7px] fa-asterisk text-red-500"></i>
                   </sup>
                 </label>
                 <div className="border shadow-lg flex gap-5 items-center h-[50px] px-5 rounded-[0.5rem]">
@@ -99,7 +102,7 @@ const Contact = () => {
                   className="focus:outline-none border rounded-[0.5rem] shadow-lg block w-full h-[50px] bg-white p-2"
                   name=""
                   id="">
-                  <option value="">--Select an option--</option>
+                  <option value=""></option>
                   <option value="">Option 1</option>
                   <option value="">Option 2</option>
                   <option value="">Option 3</option>
@@ -158,7 +161,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="pt-[96px] md:px-0 px-10">
+      <section className="pt-[96px]">
         <Accordion />
       </section>
     </Layout>

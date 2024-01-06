@@ -38,8 +38,9 @@ const Layout = ({
   const [showSubNav, setShowSubNav] = useState(false);
 
   return (
-    <body className="layout">
-      <header className={`relative text-white h-[10vh] header `}>
+    <body>
+      <header
+        className={`relative text-white header border-2 border-green-400 `}>
         <div className="fixed w-full top-0 left-0 z-40">
           <Nav showSubNav={showSubNav} setShowSubNav={setShowSubNav} />
           <SubNav showSubNav={showSubNav} setShowSubNav={setShowSubNav} />

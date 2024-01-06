@@ -6,7 +6,7 @@ import React from "react";
 const FAQ = () => {
   return (
     <Layout heroBg={"/icons/faq-bg.png"}>
-      <section>
+      <section className="">
         <Accordion />
       </section>
     </Layout>

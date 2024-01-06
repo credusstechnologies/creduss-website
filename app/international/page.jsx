@@ -70,7 +70,7 @@ const International = () => {
           </div>
         </section>
 
-        <section className="px-10 md:px-20 py-10">
+        <section className=" py-10">
           <Accordion />
         </section>
       </main>

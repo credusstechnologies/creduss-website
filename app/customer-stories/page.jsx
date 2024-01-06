@@ -1,3 +1,4 @@
+import ComingSoon from "@/components/ComingSoon";
 import Layout from "@/components/Layout";
 import React from "react";
 
@@ -12,9 +13,7 @@ const CustomerStories = () => {
         specialWord: "STORIES",
         desc: "Subscribe to learn about new product features, the latest in technology, solutions, and updates.",
       }}>
-      <div>
-        <h1>COMING SOON!!!!</h1>
-      </div>
+      <ComingSoon />
     </Layout>
   );
 };

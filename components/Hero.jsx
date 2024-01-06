@@ -19,7 +19,7 @@ const Hero = ({
       style={{
         background: `${linearGradient}, url(${heroBg}) no-repeat ${bgPosition}/${bgSize}`,
       }}
-      className={`hero flex items-center  h-[90vh] relative  md:px-20 px-10 pt-[10vh]`}>
+      className={`hero flex items-center h-screen relative md:px-20 px-10 pt-32`}>
       <section className=" md:max-w-[740px] w-full ">
         <div className="text-white ">
           <h2 className={`text-[43px] uppercase `}>

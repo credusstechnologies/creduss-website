@@ -29,7 +29,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="md:flex md:items-center md:justify-between gap-20 bg-green-100 px-10 md:px-0">
+      <section className="md:flex md:items-center md:justify-between gap-20 bg-green-100 px-10 md:px-0 py-10 md:py-0">
         <div
           className="md:w-1/2"
           style={{
@@ -44,10 +44,10 @@ const About = () => {
         <div className="md:w-1/2 md:p-20 ">
           <div className=" ">
             <h6 className="text-warning-400">Who we are</h6>
-            <h1 className="text-secondary text-[3.75rem] md:leading-[4.5rem] font-bold">
+            <h1 className="text-secondary text-3xl md:text-[3.75rem] md:leading-[4.5rem] font-bold">
               Global online logistics and courier
             </h1>
-            <p className="text-[0.875rem] leading-[1.25rem] mb-4">
+            <p className="md:text-[0.875rem] leading-[1.25rem] mb-4 text-slate-800 text-xs font-normal">
               Creduss is a global online logistics and courier marketplace that
               is headquartered in Tallinn and Lagos. Creduss is a platform that
               connects travellers with free baggage space to parcel going to
@@ -61,14 +61,20 @@ const About = () => {
         </div>
       </section>
 
-      <section className="md:flex md:items-center flex-col-reverse md:flex-row md:justify-between gap-20 px-10 md:px-0 pl-10 md:pl-20">
+      <section className="md:flex md:items-center md:flex-row-reverse md:justify-between gap-20 px-10 md:px-0 pl-10 md:pl-20 mt-7 md:mt-0">
+        <div className="md:w-1/2">
+          <div>
+            <Image src={AboutImg2} alt="woman traveling" />
+          </div>
+        </div>
+
         <div className="md:w-1/2   md:p-20 ">
           <div className="  ">
             <h6 className="text-warning-400">What we do</h6>
-            <h1 className="text-secondary text-[3.75rem] md:leading-[4.5rem] font-bold">
+            <h1 className="text-secondary text-3xl md:text-[3.75rem] md:leading-[4.5rem] font-bold">
               Enabling sales through on-time delivery
             </h1>
-            <p className="text-[0.875rem] leading-[1.25rem] mb-4">
+            <p className="md:text-[0.875rem] leading-[1.25rem] mb-4 text-slate-800 text-xs font-normal">
               We are the oil that enables the engine of the global economy to
               keep running. With all businesses now online there needs to be a
               cheaper and faster way to deliver to their customers on time. This
@@ -82,15 +88,9 @@ const About = () => {
             <Button twStyles="px-7 py-4 text-white" />
           </div>
         </div>
-
-        <div className="md:w-1/2">
-          <div>
-            <Image src={AboutImg2} alt="woman traveling" />
-          </div>
-        </div>
       </section>
 
-      <section className="my-10 px-10 md:px-20">
+      <section className="my-10">
         <Accordion />
       </section>
     </Layout>

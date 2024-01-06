@@ -1,3 +1,4 @@
+import ComingSoon from "@/components/ComingSoon";
 import Layout from "@/components/Layout";
 import React from "react";
 
@@ -14,9 +15,7 @@ const Blog = () => {
         // h1: "crazy stories",
         uniqueWord: "stories",
       }}>
-      <div>
-        <h1>COMING SOON!!!!</h1>
-      </div>
+      <ComingSoon />
     </Layout>
   );
 };

@@ -67,8 +67,8 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="bg-secondary py-10 text-white why-creduss-wrapper">
-            <h1 className="md:text-[3.75rem] font-[700] text-center mb-5">
+          <section className="bg-[#262840] py-10 text-white why-creduss-wrapper">
+            <h1 className="md:text-6xl text-3xl font-bold md:leading-[72px] leading-[38px] text-center mb-5">
               Why Creduss?
             </h1>
 
@@ -102,7 +102,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="bg-warning-400 md:py-10 pt-10 ">
+          <section className="bg-warning-400 py-10 pt-10 ">
             <h6 className="text-secondary text-center">Testimonials</h6>
             <h1 className="text-center md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-10 mt-5 text-white md:w-[80%] m-auto">
               Our customers have something to say to you
@@ -111,7 +111,7 @@ export default function Home() {
             <TestimonialsSwiper />
           </section>
 
-          <section className="px-10 md:px-20">
+          <section className="">
             <Accordion />
           </section>
         </section>

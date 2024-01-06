@@ -20,7 +20,7 @@ const Accordion = () => {
   };
 
   return (
-    <div className="accordion md:w-3/5 m-auto">
+    <div className="accordion px-10 md:px-20 md:w-3/5 m-auto">
       <div className="mb-5 text-center">
         <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-10 mt-5 text-secondary md:w-[80%] m-auto">
           Frequently asked questions

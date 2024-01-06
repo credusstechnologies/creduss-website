@@ -13,17 +13,39 @@ import SwiperButtonNext from "./SwiperButtonNext";
 import SwiperButtonPrev from "./SwiperButtonPrev";
 
 const TestimonialsSwiper = () => {
+  const breakpoint = {
+    // when window width is >= 320px
+    // 320: {
+    //   slidesPerView: 2,
+    //   spaceBetween: 20,
+    // },
+    // // when window width is >= 480px
+    // 480: {
+    //   slidesPerView: 3,
+    //   spaceBetween: 30,
+    // },
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 2,
+      // spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  };
+
   return (
     <div className="testimonials-swiper text-black">
       <Swiper
         className="mySwiper"
+        breakpoints={breakpoint}
         centeredSlides={true}
         initialSlide={reviewsList.length / 2}
         // centerInsufficientSlides={false}
         modules={[Autoplay]}
         // navigation={true}
         spaceBetween={41}
-        slidesPerView={3}
+        // slidesPerView={3}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -44,7 +66,7 @@ const TestimonialsSwiper = () => {
                 />
               </div>
 
-              <div className="desc text-center flex flex-col justify-between max-h-full">
+              <div className="desc text-center flex flex-col justify-between pt-[20px]">
                 <p className="text-[#101828] leading-relaxed">{item.review}</p>
                 <h3 className=" font-bold text-base">- {item.reviewer}</h3>
               </div>
@@ -52,9 +74,10 @@ const TestimonialsSwiper = () => {
           ))}
         </div>
 
-        <div>
+        {/* TODO: create custom swiper nav */}
+        {/* <div>
           <SwiperButtonPrev>Prev </SwiperButtonPrev>
-        </div>
+        </div> */}
       </Swiper>
     </div>
   );
