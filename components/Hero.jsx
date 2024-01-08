@@ -19,7 +19,7 @@ const Hero = ({
       style={{
         background: `${linearGradient}, url(${heroBg}) no-repeat ${bgPosition}/${bgSize}`,
       }}
-      className={`hero flex items-center h-screen relative md:px-20 px-[15.5px] pt-32`}>
+      className={`hero flex items-center h-screen relative md:px-20 px-[15.5px] pt-32 pb-10`}>
       <section className=" md:max-w-[740px] w-full ">
         <div className="text-white uppercase text-3xl font-bold leading-[38px]">
           <h1 className="text-7xl break-words md:text-[90px] font-bold leading-[90px]">
@@ -42,12 +42,6 @@ const Hero = ({
           <p className="md:w-[80%]">{textContents?.desc}</p>
         </div>
 
-        {/* <div
-          className={`${
-            showHeroImg ? "bg-warning-500 p-6" : ""
-          } rounded-2xl text-white my-[18px]`}>
-          <p className="md:w-[80%]">{contents?.desc}</p>
-        </div> */}
         {!showSearchField ? (
           <div className=" flex-col md:flex-row inline md:flex md:items-center gap-2">
             <Button
@@ -81,11 +75,11 @@ const Hero = ({
         )}
       </section>
 
-      {/* <div className=" hero-img-wrapper hidden md:block">
+      <div className=" hero-img-wrapper hidden md:block ">
         {showHeroImg && (
-          <Image className="hero-img " src={HeroImg} alt="hero img" />
+          <Image className="hero-img" src={HeroImg} alt="hero img" />
         )}
-      </div> */}
+      </div>
     </section>
   );
 };

@@ -14,10 +14,11 @@ const Footer = ({ showDownloadApp }) => {
   return (
     <footer>
       {showDownloadApp && (
-        <section className="our-processes py-8 bg-green-200 md:flex md:items-center md:gap-10  md:px-20 px-[15.5px]">
-          <div>
+        <section className="our-processes md:py-8 bg-green-200 md:flex md:items-center md:gap-20  md:px-20 px-[15.5px] overflow-y-hidden">
+          <div className="h-full">
             <Image src={FooterImg} alt="an image of user device" />
           </div>
+
           <div className="pt-7 md:pt-0">
             <h6 className="text-warning-400">Get started</h6>
             <div className=" ">
@@ -37,7 +38,7 @@ const Footer = ({ showDownloadApp }) => {
         </section>
       )}
 
-      <section className="md:px-20 px-[15.5px] py-5 md:flex md:justify-between md:items-center bg-navBg text-white">
+      <section className="md:px-20 px-[15.5px] py-5 md:flex md:justify-between md:items-center bg-slate-800 text-white">
         <div>
           <h2 className="text-[1.25rem] ">Join our newsletter</h2>
           <p className="text-[#E9D7FE]">{`We'll send you a nice letter once per week. No spam`}</p>
@@ -57,57 +58,82 @@ const Footer = ({ showDownloadApp }) => {
             <Button
               isLink={false}
               label="Subscribe"
-              twStyles="px-[18px] py-2.5 bg-amber-400"
+              twStyles="px-[18px] py-2.5 bg-warning-400"
               showIcon={false}
             />
           </div>
         </div>
       </section>
 
-      <section className=" bg-secondary text-white md:px-20 py-10 px-[15.5px]">
-        <nav className="md:flex md:gap-7 md:border-b md:border-[#1D2939] md:pb-10">
-          <div className="md:w-[40%] mb-7 md:mb-0">
+      <section className=" bg-[#101828] text-white md:px-20 py-[64px] px-[15.5px]">
+        <nav className="md:flex md:gap-[64px] md:border-b md:border-[#1D2939] md:pb-10">
+          <div className="md:w-[40%] mb-7 md:mb-0 md:max-w-[320px]">
             <Image src={Logo} alt="logo" />
-            <p>
+            <p className="mt-[32px] text-gray-200 text-base font-normal leading-normal">
               Creduss is a digital platform that aims to monetize mobility by
               providing a solution to package delivery challenges.
             </p>
           </div>
 
-          <div className="mob-footer-nav grid md:grid-cols-3 gap-10">
+          <div className="mob-footer-nav grid md:grid-cols-3 w-full gap-[32px] ">
             <div>
-              <h4 className="mb-3 text-warning-400">Contact & Support</h4>
-              {FooterList.contactAndSupport.map((item) => (
-                <FooterNav key={item.id} path={item.path} text={item.text} />
-              ))}
-            </div>
-
-            <div>
-              <h4 className="mb-3 text-warning-400"> Legal</h4>
-              {FooterList.legal.map((item) => (
-                <FooterNav key={item.id} path={item.path} text={item.text} />
-              ))}
-            </div>
-
-            <div>
-              <h4 className="mb-3 text-warning-400">Alert</h4>
-              {FooterList.alert.map((item) => (
-                <FooterNav key={item.id} path={item.path} text={item.text} />
-              ))}
-
-              <div className="hidden md:block ">
-                <h4 className="mb-3 text-warning-400 md:mt-1">Coming soon</h4>
-                {FooterList.comingSoon.map((item) => (
+              <h4 className="mb-[16px] text-base font-semibold leading-normal text-warning-400">
+                Contact & Support
+              </h4>
+              <div className="flex flex-col gap-[12px]">
+                {FooterList.contactAndSupport.map((item) => (
                   <FooterNav key={item.id} path={item.path} text={item.text} />
                 ))}
               </div>
             </div>
 
+            <div>
+              <h4 className="mb-[16px] text-base font-semibold leading-normal text-warning-400">
+                {" "}
+                Legal
+              </h4>
+              <div className="flex flex-col gap-[12px]">
+                {FooterList.legal.map((item) => (
+                  <FooterNav key={item.id} path={item.path} text={item.text} />
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h4 className="mb-[16px] text-base font-semibold leading-normal text-warning-400">
+                Alert
+              </h4>
+              <div className="flex flex-col gap-[12px]">
+                {FooterList.alert.map((item) => (
+                  <FooterNav key={item.id} path={item.path} text={item.text} />
+                ))}
+
+                <div className="hidden md:block ">
+                  <h4 className="mb-[16px] text-base font-semibold leading-normal text-warning-400">
+                    Coming soon
+                  </h4>
+                  <div className="flex flex-col gap-[12px]">
+                    {FooterList.comingSoon.map((item) => (
+                      <FooterNav
+                        key={item.id}
+                        path={item.path}
+                        text={item.text}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="md:hidden ">
-              <h4 className="mb-3 text-warning-400 md:mt-1">Coming soon</h4>
-              {FooterList.comingSoon.map((item) => (
-                <FooterNav key={item.id} path={item.path} text={item.text} />
-              ))}
+              <h4 className="mb-[16px] text-base font-semibold leading-normal text-warning-400 md:mt-1">
+                Coming soon
+              </h4>
+              <div className="flex flex-col gap-[12px]">
+                {FooterList.comingSoon.map((item) => (
+                  <FooterNav key={item.id} path={item.path} text={item.text} />
+                ))}
+              </div>
             </div>
           </div>
         </nav>
@@ -140,7 +166,9 @@ export default Footer;
 
 export const FooterNav = ({ text, path }) => {
   return (
-    <Link className="mb-2 block" href={path}>
+    <Link
+      className="mb-2 block text-gray-200 text-base font-semibold leading-normal"
+      href={path}>
       {text}
     </Link>
   );
