@@ -201,7 +201,11 @@ html {
       // height: 40px;
 
       .swiper-pagination-bullet {
-        background: #fdb022;
+        background: #98a2b3;
+
+        &-active {
+          background: #fdb022;
+        }
       }
     }
 

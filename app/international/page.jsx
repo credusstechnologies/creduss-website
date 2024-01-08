@@ -28,7 +28,7 @@ const International = () => {
 
         <section className="px-[15.5px] md:px-20 py-10 intl-steps">
           <div className="w-[80%] mb-5">
-            <h6 className="text-green-800">
+            <h6 className="text-green-800 text-base font-semibold leading-normal">
               Simplify International Deliveries with Creduss
             </h6>
             <h1 className="text-[1.875rem] md:text-[3.75rem] md:leading-[4.5rem] font-bold mb-5">
@@ -59,7 +59,7 @@ const International = () => {
           </div>
         </section>
 
-        <section className=" py-10">
+        <section className="">
           <Accordion />
         </section>
       </main>

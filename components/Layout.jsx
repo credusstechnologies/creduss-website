@@ -61,7 +61,7 @@ const Layout = ({
         {children}
       </main>
 
-      {/* <Footer showDownloadApp={showDownloadApp} /> */}
+      <Footer showDownloadApp={showDownloadApp} />
     </body>
   );
 };

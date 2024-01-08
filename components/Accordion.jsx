@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "./Button";
 
 const Accordion = () => {
@@ -20,24 +21,28 @@ const Accordion = () => {
   };
 
   return (
-    <div className="accordion px-[15.5px] md:px-20 md:w-3/5 m-auto">
-      <div className="mb-5 text-center">
-        <h1 className="md:leading-[4rem] leading-[2.5rem] font-bold text-[1.875rem] md:text-[3.75rem] mb-10 mt-5 text-secondary md:w-[80%] m-auto">
+    <div className="accordion py-[96px] px-[15.5px] md:px-20 md:w-3/5 m-auto">
+      <div className=" text-left md:text-center">
+        <h1 className="text-3xl leading-[38px] text-left md:text-center text-gray-900 md:text-6xl font-bold md:leading-[72px] md:w-[80%]">
           Frequently asked questions
         </h1>
-        <p>Here are some of the most common frequently asked questions</p>
+        <p className="text-slate-700 text-sm font-normal leading-tight mt-[20px] mb-[64px]">
+          Here are some of the most common frequently asked questions
+        </p>
       </div>
 
-      {faqList.map((item) => (
-        <AccordionItem
-          key={item.id}
-          isActive={activeItemId === item.id}
-          item={item}
-          onItemClick={handleClickedItem}
-        />
-      ))}
+      <div className="flex flex-col gap-[32px] ">
+        {faqList.map((item) => (
+          <AccordionItem
+            key={item.id}
+            isActive={activeItemId === item.id}
+            item={item}
+            onItemClick={handleClickedItem}
+          />
+        ))}
+      </div>
 
-      <div className="bg-slate-50 flex items-center justify-center py-10 text-center my-10">
+      <div className="bg-slate-50 flex items-center justify-center py-10 text-center ">
         <div className="flex items-center justify-center flex-col">
           <Image
             src="/icons/avatar-group.png"
@@ -54,12 +59,16 @@ const Accordion = () => {
           </div>
 
           <div className="flex items-center gap-5">
-            <Button
-              label="Contact us"
-              href="/contact-us"
-              twStyles="px-[18px] py-2.5 bg-emerald-100 text-green-600"
-              showIcon={false}
-            />
+            <Link href="/contact-us">
+              <button
+                className={`${
+                  pathname !== "/faq"
+                    ? "bg-[#cbffe5] text-green-600"
+                    : "text-white bg-primary"
+                } px-[18px] py-2.5  rounded-[8px]  text-base font-semibold leading-normal`}>
+                Contact us
+              </button>
+            </Link>
             {pathname !== "/faq" && (
               <Button
                 label="Go to FAQ page"

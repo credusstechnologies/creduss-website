@@ -19,8 +19,10 @@ const Footer = ({ showDownloadApp }) => {
             <Image src={FooterImg} alt="an image of user device" />
           </div>
 
-          <div className="pt-7 md:pt-0">
-            <h6 className="text-warning-400">Get started</h6>
+          <div className="py-7 md:py-0">
+            <h6 className="text-warning-400 text-base font-semibold leading-normal">
+              Get started
+            </h6>
             <div className=" ">
               <h1
                 className="

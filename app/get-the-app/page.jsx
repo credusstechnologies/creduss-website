@@ -13,7 +13,7 @@ const GetTheApp = () => {
   return (
     <Layout showDownloadApp={false} showHero={false}>
       <main className="">
-        <section className="pt-[12vh] bg-green-200 flex  items-center justify-center gap-10 py-10">
+        <section className="pt-[15vh] bg-green-200 flex  items-center justify-center gap-10 py-10">
           <div className="flex items-center justify-between flex-col-reverse md:flex-row w-[90%] b">
             <div className="md:w-1/2 md:-translate-x-20">
               <Image src={MobileApp} alt="mobile app view" />
@@ -21,7 +21,9 @@ const GetTheApp = () => {
 
             <div className="px-[15.5px] md:px-0 md:scale-y-[0.9]">
               <div>
-                <h6 className="text-warning-500">GET STARTED</h6>
+                <h6 className="text-warning-500 text-base font-semibold leading-normal">
+                  GET STARTED
+                </h6>
                 <h1 className="text-secondary md:text-[3.75rem] md:leading-[4.5rem] font-bold">
                   Download our app
                 </h1>
