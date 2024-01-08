@@ -7,11 +7,10 @@ import Footer from "@/components/Footer";
 import { useState } from "react";
 
 const defaultTextContents = {
-  caption: "transforming movement & package delivery",
+  mainCaption: "transforming",
+  subCaption: "movement & package delivery",
+  specialWord: "package",
   desc: "Welcome to Creduss, where we're redefining the way you move and deliver. Say goodbye to the old norms and embrace a new era of seamless mobility and efficient package delivery.",
-
-  h1: "transforming",
-  uniqueWord: "package",
 };
 
 const Layout = ({
@@ -33,7 +32,7 @@ const Layout = ({
           rgba(16, 24, 40, 0.85) 23.12%,
           rgba(16, 24, 40, 0) 43.29%
         )`,
-  contents = defaultTextContents,
+  textContents = defaultTextContents,
 }) => {
   const [showSubNav, setShowSubNav] = useState(false);
 
@@ -56,7 +55,7 @@ const Layout = ({
             linearGradient={linearGradient}
             bgPosition={bgPosition}
             bgSize={bgSize}
-            contents={contents}
+            textContents={textContents}
           />
         )}
         {children}
