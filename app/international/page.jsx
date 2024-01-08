@@ -5,41 +5,30 @@ import React from "react";
 import Image from "next/image";
 
 import { credussForLocalList, sendReceiveLocally } from "../local/page";
+import WhyCredussCards from "@/components/WhyCredussCards";
 
 const International = () => {
   return (
     <Layout
       heroBg={"/icons/local-bg.png"}
       textContent={{
-        mainHeader: "SENDING & RECEIVING",
-        mainHeaderFs: "72px",
-        subHeader: "PACKAGES INTERNATIONALLY",
-        specialWord: "PACKAGES",
+        mainCaption: "SENDING & RECEIVING",
+        subCaption: "packages internationally",
+        specialWord: "packages",
         desc: "Welcome to Creduss Local Operations, where we make sending and receiving packages in your community effortless and efficient. Discover how our platform works seamlessly to connect you with trusted couriers and ensure your packages reach their destination safely.",
       }}>
       <main>
-        <section className="px-10 md:px-20 py-10">
-          <h1 className="text-secondary text-[2.25rem] text-center md:leading-[4.5rem] font-bold">
+        <section className="px-[15.5px] md:px-20 py-10">
+          <h1 className="hidden md:block text-secondary text-[2.25rem] text-center md:leading-[4.5rem] font-bold">
             Why Choose Creduss for International Deliveries
           </h1>
 
-          <div className="md:flex items-center justify-between gap-5">
-            {credussForLocalList.map((i) => (
-              <div key={i.id} className="shadow-lg flex items-start p-5 gap-5">
-                <Image src={i.icon} alt="icon" width={32} height={32} />
-
-                <div>
-                  <h2>{i.title}</h2>
-                  <p className="text-desc">{i.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <WhyCredussCards />
         </section>
 
-        <section className="px-10 md:px-20 py-10 intl-steps">
+        <section className="px-[15.5px] md:px-20 py-10 intl-steps">
           <div className="w-[80%] mb-5">
-            <h6 className="text-green-800">
+            <h6 className="text-green-800 text-base font-semibold leading-normal">
               Simplify International Deliveries with Creduss
             </h6>
             <h1 className="text-[1.875rem] md:text-[3.75rem] md:leading-[4.5rem] font-bold mb-5">
@@ -70,7 +59,7 @@ const International = () => {
           </div>
         </section>
 
-        <section className=" py-10">
+        <section className="">
           <Accordion />
         </section>
       </main>

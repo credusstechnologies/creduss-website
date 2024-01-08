@@ -9,7 +9,7 @@ import ContactImg from "../../public/icons/contact.png";
 const Contact = () => {
   return (
     <Layout heroBg={"/icons/contact-bg.png"}>
-      <section className="md:flex md:items-center md:justify-between gap-20 px-10 md:px-0">
+      <section className="md:flex md:items-center md:justify-between gap-20 px-[15.5px] md:px-0">
         <div
           className="md:w-1/2 "
           style={{
@@ -24,7 +24,9 @@ const Contact = () => {
         <div className="md:w-1/2 md:pr-20 mt-7 ">
           <form>
             <div>
-              <h6 className="text-warning-400">Talk to us</h6>
+              <h6 className="text-warning-400 text-base font-semibold leading-normal">
+                Talk to us
+              </h6>
               <h1 className="text-secondary md:text-[3.75rem] md:leading-[4.5rem] text-3xl font-bold">
                 Get in Touch
               </h1>
@@ -133,7 +135,7 @@ const Contact = () => {
             </div>
           </form>
 
-          <div className="flex items-center justify-between mt-10">
+          <div className="flex items-center justify-between mt-10 text-[9px] md:text-[13px]">
             <div className="flex items-center gap-4">
               <i className="fa-solid fa-phone text-[1.3rem]"></i>
               <div>
@@ -161,7 +163,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="pt-[96px]">
+      <section className="">
         <Accordion />
       </section>
     </Layout>

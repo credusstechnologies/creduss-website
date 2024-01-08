@@ -1,3 +1,5 @@
+// @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
 html {
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
@@ -81,6 +83,7 @@ html {
 
 .hero {
   position: relative;
+  overflow-x: hidden;
 
   &::after {
     content: "";
@@ -94,31 +97,16 @@ html {
     top: 0;
     // border: 1px solid yellow;
   }
-  // height: 100%;
-  // border: 3px solid green;
-  // min-height: 100vh;
-  // margin-top: 5rem;
-  // padding-top: 3rem;
-
-  @media screen and (max-width: 800px) {
-    padding-bottom: 5rem;
-  }
 
   .hero-img-wrapper {
-    @media screen and (min-width: 800px) {
-      //   width: 50%;
-    }
-
+    position: relative;
+    left: -10%;
+    top: -20%;
     .hero-img {
-      padding: 3rem inherit;
-      padding-bottom: 3rem;
-
       @media screen and (min-width: 800px) {
         display: block;
         // width: 200%;
         transform: scale(2);
-        position: relative;
-        left: -30%;
 
         z-index: 0;
       }
@@ -213,7 +201,11 @@ html {
       // height: 40px;
 
       .swiper-pagination-bullet {
-        background: #fdb022;
+        background: #98a2b3;
+
+        &-active {
+          background: #fdb022;
+        }
       }
     }
 
@@ -334,8 +326,12 @@ footer {
   }
 
   .our-processes {
-    img {
-      transform: scale(1.1);
+    @media screen and (min-width: 768px) {
+      img {
+        transform: scale(1.3);
+
+        // transform: translateX(-2px);
+      }
     }
   }
   .mob-footer-nav {
@@ -343,6 +339,11 @@ footer {
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  // .footer-hero-img {
+  //   transform: scaleY(3);
+  //   border: 2px solid blue;
+  // }
 }
 
 .local-steps {
