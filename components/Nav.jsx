@@ -38,7 +38,8 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
 
         <button
           onClick={() => setShowMobNav(!showMobNav)}
-          className="md:hidden">
+          className="md:hidden"
+        >
           <i className="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -49,18 +50,19 @@ const Nav = ({ showSubNav, setShowSubNav }) => {
           className={`${
             pathname === activeSubNav?.path ? "active-link" : ""
           } cursor-pointer`}
-          onClick={() => setShowSubNav(!showSubNav)}>
+          onClick={() => setShowSubNav(!showSubNav)}
+        >
           <i
-            className={`fa-solid fa-chevron-${
-              showSubNav ? "up" : "down"
-            }`}></i>{" "}
+            className={`fa-solid fa-chevron-${showSubNav ? "up" : "down"}`}
+          ></i>{" "}
           {activeSubNav?.text || "Contact us"}
         </li>
 
         {mainNavList.map((nav) => (
           <li
             className={pathname === nav.path ? "active-link" : ""}
-            key={nav.id}>
+            key={nav.id}
+          >
             <Link href={nav.path}>{nav.text}</Link>
           </li>
         ))}
@@ -97,7 +99,8 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
       {showSubNav && (
         <nav
           ref={ref}
-          className="absolute w-full left-0 hidden md:flex px-[15.5px] py-5 bg-white text-black  justify-between gap-5 ">
+          className="absolute w-full left-0 hidden md:flex px-[15.5px] py-5 bg-white text-black  justify-between gap-5 "
+        >
           <div>
             <h6 className="text-warning-500 text-base font-semibold leading-normal">
               Resources
@@ -110,7 +113,8 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
                 }}
                 className="mt-[1.5rem] flex gap-3 items-center"
                 key={res.id}
-                href={res.path}>
+                href={res.path}
+              >
                 <i className={`${res.icon} text-primary`}></i>
                 <div>
                   <h3 className="font-medium">{res.text}</h3>
@@ -132,7 +136,8 @@ export const SubNav = ({ showSubNav, setShowSubNav }) => {
                 }}
                 className="mt-[1.5rem] flex gap-3 items-center"
                 key={com.id}
-                href={com.path}>
+                href={com.path}
+              >
                 <i className={`${com.icon} text-primary`}></i>
                 <div>
                   <h3 className="font-medium">{com.text}</h3>
@@ -179,11 +184,11 @@ export const mainNavList = [
     text: "Find a location",
     path: "/find-a-location",
   },
-  {
-    id: "4",
-    text: "Get the app",
-    path: "/get-the-app",
-  },
+  // {
+  //   id: "4",
+  //   text: "Get the app",
+  //   path: "/get-the-app",
+  // },
 ];
 
 export const subNavList = {
