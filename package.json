@@ -25,5 +25,6 @@
     "postcss": "latest",
     "prop-types": "^15.8.1",
     "tailwindcss": "latest"
-  }
+  },
+  "packageManager": "yarn@4.10.3"
 }
