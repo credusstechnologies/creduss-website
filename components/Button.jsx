@@ -7,18 +7,19 @@ import PropTypes from "prop-types";
 const Button = ({
   onClick,
   isLink = true,
-  href = "/get-the-app",
+  href = "/files/creduss.apk",
   showIcon = true,
   label = "Get the android app",
   twStyles,
 }) => {
   if (isLink) {
     return (
-      <Link href={href}>
+      <Link href={href} download={true}>
         <button
           onClick={() => onClick}
           className={`flex items-center justify-center
-            gap-2 rounded-[8px] bg-primary text-base font-semibold leading-normal ${twStyles}`}>
+            gap-2 rounded-[8px] bg-primary text-base font-semibold leading-normal ${twStyles}`}
+        >
           {showIcon && <Image src={Android} alt="android icon" />}
           <span>{label}</span>
         </button>
@@ -30,7 +31,8 @@ const Button = ({
     <button
       onClick={() => onClick}
       className={`flex items-center justify-center
-            gap-2 rounded-[8px] bg-primary text-base font-semibold leading-normal ${twStyles}`}>
+            gap-2 rounded-[8px] bg-primary text-base font-semibold leading-normal ${twStyles}`}
+    >
       {showIcon && <Image src={Android} alt="android icon" />}
       <span>{label}</span>
     </button>
