@@ -19,12 +19,12 @@
     "swiper": "^10.3.1"
   },
   "devDependencies": {
-    "autoprefixer": "latest",
+    "autoprefixer": "10",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "postcss": "latest",
+    "postcss": "8",
     "prop-types": "^15.8.1",
-    "tailwindcss": "latest"
+    "tailwindcss": "3"
   },
   "packageManager": "yarn@4.10.3"
 }

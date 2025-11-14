@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 const Button = ({
   onClick,
   isLink = true,
-  href = "/files/creduss.apk",
+  href = "/files/creduss.apk", //apk file
   showIcon = true,
   label = "Get the android app",
   twStyles,
